@@ -6,6 +6,8 @@
 
 잼팟 역시 [잼킷](https://bookjam.github.io/jamkit/)으로 개발되었습니다. 잼킷을 사용하면 실제 모바일 디바이스가 없더라도 Mac OS 기반의 PC에서 잼팟을 실행할 수 있습니다. 
 
+<img src="https://user-images.githubusercontent.com/19699721/28746636-d5e9c32c-74ca-11e7-9d78-f94d56740f7b.jpg" width="170"> <img src="https://user-images.githubusercontent.com/19699721/28746638-d60f73b0-74ca-11e7-8233-90fb404cc04e.jpg" width="170"> <img src="https://user-images.githubusercontent.com/19699721/28746639-d614ebba-74ca-11e7-9d5c-a6def6e90efd.jpg" width="170"> <img src="https://user-images.githubusercontent.com/19699721/28746640-d61a695a-74ca-11e7-87f8-0b73f39d5e58.jpg" width="170"> <img src="https://user-images.githubusercontent.com/19699721/28746641-d62526d8-74ca-11e7-8eec-c95f13c44a11.jpg" width="170">
+
 ## 잼팟을 실행하려면
 
 잼팟을 실행하는 가장 좋은 방법은 앱스토어나 구글플레이에서 공식 배포 버전을 모바일 디바이스에 직접 설치하는 것입니다. 하지만 공식 버전이 배포되기 전이거나 개발 버전을 Mac OS 기반의 PC에서 직접 실행하고 싶은 경우에는 다음 절차대로 따라하시면 됩니다. 개발자라면 매우 쉽게 따라하실 수 있습니다.
