@@ -1,0 +1,53 @@
+import common_ref.sbss
+
+#label_title: font-family="$_FONT_DEFAULT", \
+                width=0.82pw, line-break-mode=tail-truncation, \
+                font-size=15, \
+                text-color="$_TEXT_COLOR_DEFAULT", \
+                text-align=left, vertical-align=middle
+
+#label_info: font-family="$_FONT_DEFAULT", \
+                width=0.7pw, line-break-mode=tail-truncation, \
+                font-size=12, \
+                text-color="$_TEXT_COLOR_DEFAULT", \
+                text-align=left
+
+#label_date: style="label_info"
+#label_receipt: style="label_info"
+#label_price: type="number", format="[가격] %.0f코인", style="label_info"
+#label_expired_date: style="label_info"
+
+#btn_detail: position=abs, gravity=right, \
+            width=20dp, x=-16dp
+
+#img_line: width=0.96pw, height=1dp, background-color=#DEDEDE, position=abs, gravity=bottom
+/cell: display=block, width=100%, height=100%, \
+        border-color="$_LINE_COLOR_01", border-bottom-width="1dp", \
+        padding="25dp 25dp 0 25dp", \
+        paragraph-spacing=0.3em
+/cell/title: margin="0 0 0.6em 0"
+
+
+
+
+if $SCREEN_WIDTH > "5.0"
+#label_title: font-size=16
+#label_info: font-size=0.83
+#label_date: style="label_info"
+#label_type: style="label_info"
+#label_expired_date: style="label_info"
+
+    if $NUMBER == 1 || $NUMBER == 2
+        /cell: border-color="$_LINE_COLOR_01", border-top-width="0.1dp 0"
+    end
+else
+    if $NUMBER == 1
+        /cell: border-color="$_LINE_COLOR_01", border-top-width="0.1dp 0"
+    end
+end
+
+
+if "${expired-at}" == ""
+    #label_date:
+    #label_expired_date: text="[유효기간] 소장"
+end

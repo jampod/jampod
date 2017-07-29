@@ -1,0 +1,16 @@
+import themes.sbss
+
+#label_query: width=1pw, height=1ph, display=none, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.1, \
+        text-align=center, text-color=$MAIN_COLOR
+
+#label_query.history: text="최근 검색어", style=label_query
+
+#blank_line: color=$LIGHT_LINE_COLOR, width=1pw, height=1dp, \
+        position=abs, gravity=bottom
+
+/cell:
+
+if $NUMBER == 1
+    #label_query.history: display=object
+end

@@ -1,0 +1,15 @@
+=begin toolbar
+
+=begin sort
+=(object button: style=btn_sort.recent)= =(object label: text="|", style=label_seperator)= =(object button: style=btn_sort.name)=
+=end sort
+
+=begin edit
+=begin actions
+=(object button: style=btn_remove)=
+=end actions
+
+=object checkbox: style=checkbox_all
+=end edit
+
+=end toolbar

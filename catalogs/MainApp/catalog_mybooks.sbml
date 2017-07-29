@@ -1,0 +1,29 @@
+=begin catalog
+
+=begin logged.in
+
+=object showcase: style=showcase_apps
+
+=end logged.in
+
+=begin not.logged
+
+=begin message
+북잼 클라우드에 보관된 도서를
+동기화하려면 로그인하세요.
+=end message
+
+=object button: style=btn_login
+
+=end not.logged
+
+=object section: style=section_readings
+
+=begin readings
+
+=object showcase: style=showcase_readings
+=object blank: style=blank_line.bottom
+
+=end readings
+
+=end catalog

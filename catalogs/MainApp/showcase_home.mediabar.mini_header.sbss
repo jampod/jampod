@@ -1,0 +1,9 @@
+import themes.sbss
+
+#btn_play: type=play, owner=self, action=play, target=owner, toggle=yes, \
+        image=player_btn_play_small.png, selected-image=player_btn_pause_small.png, \
+        width=39dp, height=44dp, position=abs, gravity=left, \
+        content-background-color=$MAIN_COLOR, scale-mode=fit
+
+#btn_open: image=audiobar_btn_open.png, action=show, params="target=group,group=home.mediabar,toggle=yes", \
+        width=17dp, height=44dp, position=abs, gravity=left, x=39dp

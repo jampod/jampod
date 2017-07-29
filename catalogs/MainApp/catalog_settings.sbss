@@ -1,0 +1,18 @@
+import themes.sbss
+
+#showcase_settings: name=settings, category=C_SETTINGS, \
+        width=1pw, height=1ph, position=abs, gravity=center, \
+        column-count=1, cell-spacing=1dp, \
+        has-header=yes, has-footer=yes, \
+        sortable=yes, sortkey=key, sortorder=ascending, \
+        content-background-color=$SUBVIEW_BG_DARK_COLOR
+
+/catalog: page-background-color=$SUBVIEW_BG_COLOR
+
+if $SCREEN_WIDTH > 5
+    #showcase_settings: cell-size="600dp, 50dp", content-margin="0 (1pw-600dp)/2"
+
+    /catalog: font-size=1.1
+else
+    #showcase_settings: cell-size="1pw, 50dp"
+end

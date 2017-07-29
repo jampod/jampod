@@ -1,0 +1,69 @@
+import themes.sbss
+
+#btn_back: width=44dp, height=44dp, position=abs, y=20dp, image=cloudview_btn_back.png
+#img_logo: filename=cloudview_image_bookjam.png, width=300dp, height=33dp, \
+        position=abs, gravity=top, y=20dp+6dp
+
+#text_email: height=50dp, background-color=$BOOKJAM_COLOR_1_DIM, \
+        font-family=$SANSSERIF_LIGHT, text-color=$BOOKJAM_COLOR_3
+#text_password: height=50dp, background-color=$BOOKJAM_COLOR_2_DIM, \
+        font-family=$SANSSERIF_LIGHT, text-color=$BOOKJAM_COLOR_3
+#text_password_confirm: height=50dp, background-color=$BOOKJAM_COLOR_1_DIM, \
+        font-family=$SANSSERIF_LIGHT, text-color=$BOOKJAM_COLOR_3
+#text_name: height=50dp, background-color=$BOOKJAM_COLOR_2_DIM, \
+        font-family=$SANSSERIF_LIGHT, text-color=$BOOKJAM_COLOR_3
+
+#checkbox_all: width=20dp, vertical-align=middle, \
+        image=cloudview_icon_deselected.png, selected-image=cloudview_icon_selected.png
+#check_each: width=20dp, vertical-align=middle, \
+        image=cloudview_icon_deselected.png, selected-image=cloudview_icon_selected.png
+#terms: active-color=$TRANSPARENT_COLOR
+#btn_register: width=1pw, height=50dp, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$WHITE_COLOR, highlight-label-color=$WHITE_COLOR, \
+        background-color=$BOOKJAM_COLOR_3, highlight-background-color=$BOOKJAM_COLOR_1
+#btn_clear: width=50dp, height=50dp, image=cloudview_btn_blank_cancel.png, align=right
+
+%clear: display=block, height=50dp, margin-top=-50dp
+
+/page: font-family=$SANSSERIF_LIGHT, text-color=$WHITE_COLOR, page-background-color=$BOOKJAM_COLOR_2
+/page/register: display=block, position=abs, gravity=top
+/page/register/input/terms: line-spacing=0.4em, paragraph-spacing=0.4em
+/page/register/input/terms/all: font-size=1.2em, margin-bottom=15dp
+
+if $SCREEN_WIDTH > 5
+    #text_email: width=360dp, label-font-size=1.1, padding="0 20dp"
+    #text_password: width=360dp, label-font-size=1.1, padding="0 20dp"
+    #text_password_confirm: width=360dp, label-font-size=1.1, padding="0 20dp"
+    #text_name: width=360dp, label-font-size=1.1, padding="0 20dp"
+    #btn_register: width=400dp, label-font-size=1.1
+    %clear: width=400dp
+
+    /page: font-size=1.1
+    /page/register/input/terms: font-size=1, display=block, width=400dp, margin="20dp 0 30dp 0"
+
+    if $ORIENTATION == "portrait"
+        /page: margin-top=200dp
+        /page/register: y=140dp
+    else
+        /page: margin-top=140dp
+        /page/register: y=120dp
+    end
+else
+    #text_email: width=0.9pw, padding="0 0.05pw"
+    #text_password: width=0.9pw, padding="0 0.05pw"
+    #text_password_confirm: width=0.9pw, padding="0 0.05pw"
+    #text_name: width=0.9pw, padding="0 0.05pw"
+    #btn_register: width=1pw
+    %clear: width=1pw
+
+    if $SCREEN_SIZE > 4
+        /page: font-size=1, margin-top=140dp
+        /page/register: y=80dp
+        /page/register/input/terms: font-size=0.9, margin="20dp 20dp 34dp 20dp"
+    else
+        /page: font-size=0.9, margin-top=100dp
+        /page/register: y=80dp
+        /page/register/input/terms: font-size=0.8, margin=20dp
+    end
+end

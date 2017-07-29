@@ -1,0 +1,10 @@
+import themes.sbss
+
+#card_categories: id=card.categories, name=categories, saves-state=yes, \
+        width=1pw, height=1ph-30dp, position=abs, gravity=bottom, y=-10dp, \
+        has-page-control=yes, page-control-position=top, page-control-height=20dp, \
+        active-page-dot=category_active_page_dot.png, \
+        inactive-page-dot=category_inactive_page_dot.png, \
+        scroll-indicator-hidden=yes
+
+/cell: page-background-color=$SUB_COLOR

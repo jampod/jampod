@@ -1,0 +1,6 @@
+=begin header
+
+=object button: style=btn_play
+=object button: style=btn_open
+
+=end header

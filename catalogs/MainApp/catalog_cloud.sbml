@@ -1,0 +1,70 @@
+=begin catalog: action-when-exceeded=popup, params-when-exceeded="display-unit=S_DEVICE_EXCEEDED", \
+                action-when-register=page, params-when-register="display-unit=S_REGISTER_BOOKJAM"
+
+=begin login
+
+=begin logo
+=object image: style=img_logo
+=begin note
+잼팟은 북잼 클라우드를 이용합니다.
+=end note
+=end logo
+
+=begin actions
+
+=object button: label="북잼 계정으로 로그인", style=btn_login.bookjam
+=object button: label="북잼 계정 만들기", style=btn_register
+
+=begin note
+=(object section: style=section_note.line)==(object label: text="또는", style=label_note)==(object section: style=section_note.line)=
+=begin line
+=object blank: style=blank_note.line
+=end line
+=end note
+
+=begin social
+=(object image: style=img_login.facebook)= =(object button: style=btn_login.facebook)=
+=(object image: style=img_login.naver)= =(object button: style=btn_login.naver)=
+=(object image: style=img_login.kakao)= =(object button: style=btn_login.kakao)=
+=end social
+
+=end actions
+
+=end login
+
+=begin profile
+=begin head
+=begin logon
+로그인
+=begin box
+=(object image: style=img_logon)=  =(object label: style=label_logon)= =(object label: style=label_user.id)=
+=end box
+=end logon
+=begin user
+사용자명
+=object label: style=label_user.name
+=object button: label="수정", style=btn_edit.user.name
+
+이메일
+=object label: style=label_user.email
+=object button: label="인증", style=btn_activate.user.email
+=end user
+
+=begin password
+=object button: label="비밀번호 변경하기", style=btn_edit.user.password
+=end password
+=end head
+
+=image: style=img_line
+
+=begin logout
+=begin button
+=(object button: label="로그아웃", style=btn_logout)=
+=end button
+=begin info
+로그아웃하면 앱 내의 모든 데이터가 초기화되며 현재 기기가 내 계정에서 등록 해제됩니다.
+=end info
+=end logout
+=end profile
+
+=end catalog

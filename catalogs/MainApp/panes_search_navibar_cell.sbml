@@ -1,0 +1,8 @@
+=begin cell
+
+=begin content
+=object image: style=img_favicon
+=object label: style=label_name
+=end content
+
+=end cell

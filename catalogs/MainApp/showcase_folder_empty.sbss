@@ -1,0 +1,12 @@
+import themes.sbss
+
+/empty/message: display=block, padding="0 30dp", \
+        position=abs, gravity=center, y=-40dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.1, \
+        text-color=$DEFAULT_TEXT_COLOR, text-align=center, \
+        line-spacing=0.4em, paragraph-spacing=0.4em
+
+/empty/message/info: margin-top=10dp, padding="0 30dp", \
+        font-family=$SANSSERIF_LIGHT, font-size=0.9, \
+        text-color=$DEFAULT_TEXT_COLOR, text-align=center, \
+        line-spacing=0.4em, paragraph-spacing=0.4em

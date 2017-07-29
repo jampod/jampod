@@ -1,0 +1,21 @@
+=begin toolbar
+
+=begin sort
+=(object button: style=btn_sort.recent)==(object button: style=btn_sort.title)=
+=end sort
+
+=object button: style=btn_sort.recent_img
+=object button: style=btn_sort.title_img
+
+=object button: style=btn_layout
+=object checkbox: style=checkbox_expiry
+
+=begin edit
+=begin actions
+=(object button: style=btn_discard)=
+=end actions
+
+=object checkbox: style=checkbox_all
+=end edit
+
+=end toolbar

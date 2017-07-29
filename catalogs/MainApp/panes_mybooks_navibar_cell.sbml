@@ -1,0 +1,9 @@
+=begin cell
+
+=object blank: style=blank_line
+
+=begin content
+${title}
+=end content
+
+=end cell

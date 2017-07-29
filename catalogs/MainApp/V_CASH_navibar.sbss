@@ -1,0 +1,4 @@
+import subview_navibar.sbss
+
+#btn_purchases: width=44dp, height=44dp, position=abs, gravity=right-bottom, \
+    image=subview_btn_purchased.png

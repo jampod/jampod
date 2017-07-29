@@ -1,0 +1,17 @@
+import themes.sbss
+
+#btn_clear: label="검색기록 삭제", width=80dp, height=40dp, position=abs, gravity=left, x=5dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=0.9, \
+        label-color=$DEFAULT_COLOR, label-align=left
+
+#btn_cancel: label="검색 취소", action=script, target=object, object=cell.query, script=cancel_query, \
+        width=80dp, height=40dp, position=abs, gravity=right, x=-5dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=0.9, \
+        label-color=$DEFAULT_COLOR, label-align=right
+
+/toolbar: page-background-color=$DEFAULT_COLOR_DIM
+
+if "${PANE}" == "1"
+    #btn_clear: action=remove, showcase=query.history, \
+            action-when-done=reload, params-when-done="target=object,object=showcase.query.history"
+end

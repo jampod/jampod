@@ -1,0 +1,5 @@
+=begin navibar
+
+=object checkbox: type=edit, owner=showcase.items, style=checkbox_edit
+
+=end navibar

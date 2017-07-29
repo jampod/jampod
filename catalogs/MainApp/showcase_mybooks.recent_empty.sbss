@@ -1,0 +1,8 @@
+import themes.sbss
+
+/empty: page-background-color=$TRANSPARENT_COLOR
+/empty/message: display=block, padding="0 30dp", \
+        position=abs, gravity=center, y=-20dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.1, \
+        text-color=$WHITE_COLOR, text-align=center, \
+        line-spacing=0.4em, paragraph-spacing=0.4em

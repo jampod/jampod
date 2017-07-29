@@ -1,0 +1,65 @@
+import themes.sbss
+
+#img_icon: type=app, app="${app}", default-color=$LIGHT_COLOR, \
+        width=60dp, height=60dp, position=abs, gravity=left, x=15dp, \
+        content-border-radius=5dp
+
+#img_pin: filename="subview_icon_pin.png", scale-mode=fit, display=none, \
+        width=18dp, height=18dp, position=abs, gravity=left-top, x=8dp, y=5dp
+#label_title: text="${title}", max-width=1pw-(15dp+60dp+15dp+10dp), height=20dp, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.2, text-color=$DEFAULT_TEXT_COLOR, \
+        number-of-lines=1, line-break-mode=tail-truncation
+
+#btn_menu: display=none, action=popup, display-unit="${id}", alternate-name=jam.menu, \
+        image=subview_btn_more.png, width=30dp, height=30dp, \
+        position=abs, gravity=top-right, y=6dp
+
+#blank_mask: display=none, color=$BLACK_COLOR_SWALLOWEST_DIM, \
+        width=1pw, height=1ph-4dp, position=abs, gravity=center
+#img_selected: display=none, filename=mybooksview_icon_selected.png, \
+        width=20dp, height=20dp, position=abs, gravity=left, x=10dp
+#img_deselected: display=none, filename=mybooksview_icon_deselected.png, \
+        width=20dp, height=20dp, position=abs, gravity=left, x=10dp
+
+#blank_line: color=$LIGHT_LINE_COLOR, width=1pw, height=1dp, position=abs, gravity=bottom
+
+/cell/title: display=block, position=abs, gravity=left-top, x=15dp+60dp+15dp, y=12dp
+
+if $PINNING == "yes"
+    #img_pin: display=object
+end
+
+if $EDITING == "yes"
+    #img_icon: x=10dp+20dp+10dp
+    #label_title: max-width=1pw-(10dp+20dp+10dp+60dp+15dp+30dp)
+    #btn_menu: display=object
+
+    /cell/title: x=10dp+20dp+10dp+60dp+15dp
+
+    if $STATE == "selected"
+        #blank_mask: display=object
+        #img_selected: display=object
+    else
+        #img_deselected: display=object
+    end
+end
+
+if $SCREEN_WIDTH > 5
+    #img_icon: width=76dp, height=76dp
+    #label_title: max-width=1pw-(15dp+76dp+15dp+10dp), height=24dp, font-size=1.3
+    #img_selected: width=24dp, height=24dp
+    #img_deselected: width=24dp, height=24dp
+
+    /cell/title: x=15dp+76dp+15dp
+
+    if $PINNING == "yes"
+        #img_pin: width=24dp, height=24dp
+    end
+
+    if $EDITING == "yes"
+        #img_icon: x=10dp+24dp+10dp
+        #label_title: max-width=1pw-(10dp+24dp+10dp+76dp+15dp+30dp)
+
+        /cell/title: x=10dp+24dp+10dp+76dp+15dp
+    end
+end

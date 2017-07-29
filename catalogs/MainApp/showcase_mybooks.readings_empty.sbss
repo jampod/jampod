@@ -1,0 +1,18 @@
+import themes.sbss
+
+#label_heading: action=popup, display-unit=S_MYBOOKS_RECENT, \
+        width=88dp, height=18dp, \
+        font-family=$SANSSERIF_MEDIUM, font-size=0.8, \
+        text-align=center, text-color=$WHITE_COLOR, \
+        content-border-radius=9dp, content-background-color=$NAVY_COLOR
+
+/empty: page-background-color=$TRANSPARENT_COLOR
+/empty/message: display=block, position=abs, gravity=center, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.0, \
+        text-color=$NAVY_COLOR, text-align=center, \
+        padding=10dp, vertical-align=middle
+
+if $SCREEN_WIDTH > 5
+    #label_heading: width=90dp, height=20dp, font-size=0.9, content-border-radius=10dp
+    /empty/message: font-size=1.2
+end

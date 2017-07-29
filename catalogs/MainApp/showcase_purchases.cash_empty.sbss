@@ -1,0 +1,15 @@
+import themes.sbss
+
+%message: display=block, padding="0 30dp", \
+        position=abs, gravity=center, y=-40dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.1, \
+        text-color=$BLACK_COLOR, text-align=center, \
+        line-spacing=0.4em, paragraph-spacing=0.4em
+
+/empty: page-background-color=$SUBVIEW_BG_COLOR
+
+if $LOADING == "yes"
+    /empty/loaded: display=none
+else
+    /empty/loading: display=none
+end

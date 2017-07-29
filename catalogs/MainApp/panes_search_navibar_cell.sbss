@@ -1,0 +1,14 @@
+import themes.sbss
+
+#img_favicon: filename="favicon/${favicon}.png", scale-mode=fit, \
+        width=26dp, height=26dp, margin-bottom=3dp
+
+#label_name: text="${name}", height=10dp, \
+        font-family=$SANSSERIF_MEDIUM, font-size=0.65, text-color=$DEFAULT_COLOR
+
+/cell/content: text-align=center, vertical-align=middle, \
+        display=block, position=abs, gravity=center, y=2dp
+
+if $STATE == "selected"
+    #label_name: font-family=$SANSSERIF_BOLD, text-color=$MAIN_COLOR
+end

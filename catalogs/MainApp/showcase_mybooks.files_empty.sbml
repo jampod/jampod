@@ -1,0 +1,9 @@
+=begin empty
+
+=begin message
+보관된 도서 파일이 없습니다.
+=end message
+
+=object button: style=btn_import
+
+=end empty

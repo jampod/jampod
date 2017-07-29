@@ -1,0 +1,9 @@
+=begin cell
+
+=object label: text="임시 데이터", style=label_title
+
+=object button: action=clear-cache, label="삭제", \
+        prompt-message="임시 저장된 앱 데이터를 삭제하시겠습니까?", \
+        style=btn_cache
+
+=end cell

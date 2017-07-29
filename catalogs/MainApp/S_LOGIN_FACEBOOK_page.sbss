@@ -1,0 +1,49 @@
+import themes.sbss
+
+#btn_back: width=44dp, height=44dp, position=abs, y=20dp, image=cloudview_btn_back.png
+#img_logo: filename=cloudview_image_bookjam.png, width=300dp, height=33dp, \
+        position=abs, gravity=top, y=20dp+6dp
+
+#checkbox_all: width=20dp, vertical-align=middle, \
+        image=cloudview_icon_deselected.png, selected-image=cloudview_icon_selected.png
+#check_each: width=20dp, vertical-align=middle, \
+        image=cloudview_icon_deselected.png, selected-image=cloudview_icon_selected.png
+#terms: active-color=$TRANSPARENT_COLOR
+
+#btn_login: height=50dp, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$WHITE_COLOR, highlight-label-color=$WHITE_COLOR, \
+        background-color=$BOOKJAM_COLOR_3, highlight-background-color=$BOOKJAM_COLOR_1
+
+/page: font-family=$SANSSERIF_LIGHT, text-color=$WHITE_COLOR, page-background-color=$BOOKJAM_COLOR_2
+/page/login: display=block, position=abs, gravity=bottom
+/page/note: text-align=center, line-spacing=0.4em, paragraph-spacing=0.4em, margin="0 0.07pw"
+/page/login/terms: line-spacing=0.4em, paragraph-spacing=0.4em
+/page/login/terms/all: font-size=1.2em, margin-bottom=10dp
+
+if $SCREEN_WIDTH > 5
+    #btn_login: width=400dp, label-font-size=1.1
+
+    /page: font-size=1.1
+    /page/login/terms: display=block, width=400dp, font-size=1, margin="20dp 0 50dp 0"
+
+    if $ORIENTATION == "portrait"
+        /page: margin-top=200dp
+        /page/login: y=-180dp
+    else
+        /page: margin-top=140dp
+        /page/login: y=-100dp
+    end
+else
+    #btn_login: width=1pw
+
+    /page/login/terms: margin="20dp 20dp 50dp 20dp"
+
+    if $SCREEN_SIZE > 4
+        /page: font-size=1, margin-top=260dp
+        /page/login/terms: font-size=0.9
+    else
+        /page: font-size=0.9, margin-top=100dp
+        /page/login/terms: font-size=0.8
+    end
+end

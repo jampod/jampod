@@ -1,0 +1,28 @@
+import themes.sbss
+
+#btn_menu: width=160dp, height=40dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.1, label-align=left, \
+        label-color=$BLACK_COLOR, highlight-label-color=$DEFAULT_COLOR, disable-label-color=$LIGHT_COLOR
+
+#btn_remove: label="삭제하기", style=btn_menu, \
+        action=remove, display-unit="${app}", target=object, object=showcase.jam, \
+        action-when-done=popup-close
+#btn_pin: label="상단에 고정", style=btn_menu, \
+        action=pin, display-unit="${app}", target=object, object=showcase.jam, \
+        action-when-done=popup-close
+
+/popup: page-background-color=$BLACK_COLOR_DIM, action-when-touched=popup-close
+/popup/menu: display=block, width=200dp, padding="20dp 20dp 10dp 20dp", \
+        position=abs, gravity=center, background-color=$WHITE_COLOR, border-radius=2dp
+/popup/menu/title: margin-bottom=15dp, \
+        font-family=$SANSSERIF_BOLD, font-size=1.2, \
+        text-align=left, text-color=$DEFAULT_TEXT_COLOR
+
+if "${pinning}" == "yes"
+    #btn_pin: label="상단 고정 해제하기", action=unpin
+end
+
+if "${channel}" != "" && "${app}" == ""
+    #btn_remove: display-unit="${channel}"
+    #btn_pin: display-unit="${channel}"
+end

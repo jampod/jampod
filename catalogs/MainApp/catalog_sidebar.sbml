@@ -1,0 +1,70 @@
+=begin catalog
+
+=object section: style=section_sidebar
+
+=begin sidebar
+=object section: style=section_profile
+=object blank: style=blank_spacing
+=object section: style=section_menu.main
+=object section: style=section_menu.sub
+=end sidebar
+
+=begin profile.on
+=object image: style=img_profile
+=object image: style=img_profile.mask
+=object label: style=label_user.name
+=end profile.on
+
+=begin profile.off
+=object image: style=img_login.icon
+=object label: style=label_login.info
+=end profile.off
+
+=begin menu.main
+=object section: style=section_menu.main.home
+=object blank: style=blank_line
+=object section: style=section_menu.main.jam
+=object blank: style=blank_line
+=object section: style=section_menu.main.mybooks
+=object blank: style=blank_line
+=object section: style=section_menu.main.cash
+=object blank: style=blank_line
+=begin home
+=object image: style=img_menu.main.home
+=object label: style=label_menu.main.home
+=end home
+=begin jam
+=object image: style=img_menu.main.jam
+=object label: style=label_menu.main.jam
+=end jam
+=begin mybooks
+=object image: style=img_menu.main.mybooks
+=object label: style=label_menu.main.mybooks
+=end mybooks
+=begin cash
+=object image: style=img_menu.main.cash
+=object label: style=label_menu.main.cash
+=end cash
+=end menu.main
+
+=begin menu.sub
+=object blank: style=blank_spacing
+=object section: style=section_menu.sub.settings
+=object section: style=section_menu.sub.support
+=object section: style=section_menu.sub.notice
+=begin settings
+=object image: style=img_menu.sub.settings
+=object label: style=label_menu.sub.settings
+=end settings
+=begin support
+=object image: style=img_menu.sub.support
+=object label: style=label_menu.sub.support
+=end support
+=begin notice
+=object image: style=img_menu.sub.notice
+=object image: style=img_menu.sub.notice.new
+=object label: style=label_menu.sub.notice
+=end notice
+=end menu.sub
+
+=end catalog

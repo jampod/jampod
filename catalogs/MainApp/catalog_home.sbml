@@ -1,0 +1,35 @@
+=begin catalog
+
+=object showcase: style=showcase_jam
+=object section: style=section_realtime.keywords.widget
+
+=object blank: style=blank_dim
+=object section: style=section_menu
+=object section: style=section_search.bar
+=object section: style=section_categories
+
+=begin menu
+=object image: style=img_logo
+=object button: style=btn_sidebar
+=object button: style=btn_channel
+=object image: style=img_notice
+=end menu
+
+=begin search.bar
+=object panes: style=panes_category
+=object button: style=btn_search
+=object label: style=label_category
+=object button: style=btn_category
+=object button: style=btn_search.home
+=end search.bar
+
+=begin categories
+=object cell: style=cell_categories
+=object button: style=btn_close
+=end categories
+
+=begin realtime.keywords.widget
+=object cell: style=cell_realtime.keywords.widget
+=end realtime.keywords.widget
+
+=end catalog

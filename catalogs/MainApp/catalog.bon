@@ -1,0 +1,11 @@
+{
+    "database-version":"2.0",
+    "default-layout":"thumbnail",
+    "default-subview":"V_HOME",
+    "related-catalogs":[
+        "Notice"
+    ],
+    "title":"잼팟",
+    "uses-database":"yes",
+    "version":"1.0"
+}

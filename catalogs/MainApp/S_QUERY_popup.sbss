@@ -1,0 +1,5 @@
+import themes.sbss
+
+#cell_query: id=cell.query, display-unit=S_QUERY, width=1pw, height=1ph
+
+/popup: first-responder=textfield.keyword, scrolls-on-keyboard=no

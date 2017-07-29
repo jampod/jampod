@@ -1,0 +1,11 @@
+=begin footer
+
+=begin title
+정보
+=end title
+
+=object showcase: name=settings, category=C_ABOUT, \
+                sortable=yes, sortkey="CAST(key AS INTEGER)", sortorder=ascending, \
+                style=showcase_settings
+
+=end footer

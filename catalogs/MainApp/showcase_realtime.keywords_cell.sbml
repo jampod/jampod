@@ -1,0 +1,15 @@
+=begin cell
+
+=object label: text="${ranking}", style=label_ranking
+=object label: text="${keyword}", style=label_keyword
+=object section: style=section_fluctuation
+
+=begin fluctuation
+=(object image: style=img_fluctuation)==(object label: text="${fluctuation-value}", style=label_fluctuation)=
+=end fluctuation
+
+=object input: style=input_keyword
+
+=object blank: style=blank_line
+
+=end cell

@@ -1,0 +1,20 @@
+=begin popup
+
+=object panes: style=panes_search
+=object section: style=section_dim
+=object cell: style=cell_categories
+=object cell: style=cell_realtime.keywords
+=object cell: style=cell_query
+
+=begin dim
+
+=object button: style=btn_home
+=object button: style=btn_close
+
+=begin action.bar
+=(object button: style=btn_query)=  =(object button: style=btn_realtime)=
+=end action.bar
+
+=end dim
+
+=end popup

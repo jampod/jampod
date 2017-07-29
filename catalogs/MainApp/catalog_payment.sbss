@@ -1,0 +1,43 @@
+import themes.sbss
+
+#checkbox_method: image="subview_icon_deselected.png", selected-image="subview_icon_selected.png", \
+        select-mode=single, group="method", \
+        width=0.94pw, height=55dp, scale-mode=fit, \
+        content-padding="20dp 0.8pw 20dp 0.01pw", \
+        saves-state=yes, disable-when-selected=yes
+
+#img_line: width=0.94pw, height=1dp, background-color=$LIGHT_LINE_COLOR
+
+#btn_payment: width=0.94pw, height=44dp, margin-top=15dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.1, \
+        label-align=center, label-color=$WHITE_COLOR, highlight-label-color=$WHITE_COLOR, \
+        content-background-color=$MAIN_COLOR, highlight-background-color=$SUB_COLOR
+
+#label_payment_title: width=0.7pw, height=55dp, font-family="$_FONT_DEFAULT", font-size=0.9, text-color="$_TEXT_COLOR_DEFAULT", text-align=left
+
+/catalog: page-background-color=$SUBVIEW_BG_COLOR
+
+/catalog/select: font-family="$_FONT_BOLD", font-size=0.9, \
+text-color="$_TEXT_COLOR_DEFAULT", margin="0.07pw 0 0.03pw 0.03pw"
+
+/catalog/payment: margin="0.02pw 0.03pw", border-width=1dp, border-color=$LIGHT_LINE_COLOR
+/catalog/payment/title: text-align=left, margin="-55dp 0 0 0.15pw"
+
+if $SCREEN_SIZE > "7"
+/catalog: margin="0.05cw 0.2cw", \
+        padding="0 0"
+
+#btn_checkbox: width=0.54pw, \
+            content-padding="20dp 0.46cw 20dp 0"
+#label_payment_title: width=0.2pw, font-size=1.05
+#img_line: width=0.535pw, height=1dp
+#btn_payment: width=0.54pw, label-font-size=18
+/catalog/buttons: width=0.54pw
+/catalog/payment/title: margin="-55dp 0 0 0.07pw"
+/catalog/payment/price: margin="-55dp 0.05pw 0 0"
+
+
+else
+
+
+end

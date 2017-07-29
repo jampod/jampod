@@ -1,0 +1,17 @@
+import themes.sbss
+
+#showcase_jam: id=showcase.jam, type=packages, alternate-name=jam, \
+        width=1pw, height=1ph, position=abs, gravity=top, \
+        column-count=1, cell-size="1pw, 84dp", \
+        has-toolbar=yes, toolbar-height=44dp, toolbar-position=bottom, \
+        selectable=yes, action-when-selected=app, \
+        action-when-selected@channel=page, params-when-selected@channel="target=popup", \
+        action-when-long-pressed=popup, params-when-long-pressed="alternate-name=jam.menu", \
+        sortable=yes, sortkey=running, sortorder=descending, \
+        reloads-when-appear=yes, has-own-title=yes, has-own-navibar=yes
+
+/catalog: page-background-color=$WHITE_COLOR, action-when-touched=popup-close
+
+if $SCREEN_WIDTH > 5
+    #showcase_jam: cell-size="1pw, 100dp"
+end

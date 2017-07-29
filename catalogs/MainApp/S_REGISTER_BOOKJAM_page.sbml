@@ -1,0 +1,71 @@
+=begin page
+
+=object button: action=page-back, style=btn_back
+=object image: style=img_logo
+
+=begin register
+
+=begin input: form=register
+
+=begin text
+=object textfield: id=email, placeholder="수신 가능한 이메일 주소", \
+                keyboard-type=email, auto-capitalization-type=none, \
+                next-control=password, return-key-type=next, \
+                valid-format=email, message-when-invalid="이메일 형식이 유효하지 않습니다.", \
+                invalid-when-empty=yes, message-when-empty="이메일 주소를 입력하세요.", \
+                style=text_email
+=begin clear
+=object button: action=clear, object=email, style=btn_clear
+=end clear
+
+=object textfield: id=password, placeholder="비밀번호(8자리 이상)", \
+                secure=yes, \
+                valid-format=".{8}.*", message-when-invalid="비밀번호는 8자리 이상이어야 합니다.", \
+                invalid-when-empty=yes, message-when-empty="비밀번호를 입력하세요.", \
+                keyboard-type=alphabet, next-control=password_confirm, return-key-type=next, \
+                style=text_password
+=begin clear
+=object button: action=clear, object=password, style=btn_clear
+=end clear
+
+=object textfield: id=password_confirm, placeholder="비밀번호 확인", secure=yes, \
+                valid-format="#{password}", message-when-invalid="비밀번호가 일치하지 않습니다.", \
+                invalid-when-empty=yes, message-when-empty="비밀번호를 입력하세요.", \
+                keyboard-type=alphabet, next-control=name, return-key-type=next, \
+                style=text_password_confirm
+=begin clear
+=object button: action=clear, object=password_confirm, style=btn_clear
+=end clear
+
+=object textfield: id=name, return-key-type=join, placeholder="사용자명(두 글자 이상)", \
+                valid-format=".{2}.*", message-when-invalid="사용자명은 두 글자 이상이어야 합니다.", \
+                style=text_name
+=begin clear
+=object button: action=clear, object=name, style=btn_clear
+=end clear
+
+=end text
+
+=begin terms
+
+=begin all
+=(object checkbox: id=terms_all, action=toggle, action-when-selected=property, params-when-selected="group=terms,properties=\"selected=yes\"", action-when-deselected=property, params-when-deselected="group=terms,properties=\"selected=no\"", style=checkbox_all)= =[terms:action=toggle, object=terms_all|모두 동의]=
+=end all
+
+=begin each
+=(object checkbox: id=terms_member, group=terms, valid-when-selected=yes, message-when-invalid="이용약관에 동의하셔야 합니다.", style=check_each)= =[terms:action=toggle, object=terms_member|이용약관 동의]=(필수) =[terms: action=popup, display-unit=S_TERM1|[보기]]=
+=(object checkbox: id=terms_use, group=terms, valid-when-selected=yes, message-when-invalid="개인정보 수집 및 이용에 동의하셔야 합니다.", style=check_each)= =[terms:action=toggle, object=terms_use|개인정보 수집 및 이용 동의]=(필수) =[terms: action=popup, display-unit=S_TERM2|[보기]]=
+=begin: display=none
+=(object checkbox: id=terms_option, group=terms, style=check_each)= =[terms:action=toggle, object=terms_option|개인정보 선택항목에 대한 수집 및 이용 동의]= =[terms: action=link, url=""|[보기]]=
+=end
+=end each
+
+=end terms
+
+=end input
+
+=object button: label="계정 만들기", action=register, form=register, channel=bookjam, style=btn_register
+
+=end register
+
+=end page

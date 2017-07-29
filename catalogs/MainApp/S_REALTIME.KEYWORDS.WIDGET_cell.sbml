@@ -1,0 +1,15 @@
+=begin cell
+
+=begin content
+=(object button: label="실시간", style=btn_head)==(object image: filename="favicon/${source}.png", style=img_source)==(object label: text="${ranking}", style=label_ranking)==(object label: text="${keyword}", style=label_keyword)==(object section: style=section_fluctuation)==(object button: style=btn_open)=
+=end content
+
+=begin fluctuation
+=(object image: style=img_fluctuation)==(object label: text="${fluctuation-value}", style=label_fluctuation)=
+=end fluctuation
+
+=object button: style=btn_search
+
+=object input: style=input_keyword
+
+=end cell

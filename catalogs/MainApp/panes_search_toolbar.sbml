@@ -1,0 +1,9 @@
+=begin toolbar
+
+=object blank: style=blank_line
+
+=object image: style=img_category
+=object button: style=btn_category
+=object button: style=btn_backward
+
+=end toolbar

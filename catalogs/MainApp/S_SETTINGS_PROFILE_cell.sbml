@@ -1,0 +1,12 @@
+=begin cell
+
+=object button: action="${action}", \
+                subview="${subview}", \
+                url="${url}", \
+                target=popup, \
+                label="${title}", \
+                style=btn_title
+
+=object image: style=img_channer
+
+=end cell

@@ -1,0 +1,39 @@
+import themes.sbss
+
+#section_recommend.heading: section=recommend.heading, width=1pw, height=44dp
+
+#showcase_recommend: data-script=feed_recommend, alternate-name=home.recommend, \
+        width=1pw, height="(1pw-20dp)*4/7*4+20dp+5dp*(4-1)+64dp", \
+        column-count=1, max-cell-count=4, cell-size="1pw-20dp, (1pw-20dp)*4/7", \
+        cell-spacing=5dp, content-margin="10dp", \
+        selectable=yes, script-when-selected=select_jam, \
+        has-footer=yes, footer-height=64dp
+
+#label_recommend.heading: text="추천 잼", height=20dp, \
+        position=abs, gravity=bottom-left, x=12dp, y=-6dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.1, text-color=$DARK_TEXT_COLOR
+
+#blank_line: color=$LIGHT_LINE_COLOR, width=1pw-10dp*2, height=1dp, \
+        position=abs, gravity=bottom
+
+/footer: script-when-loaded=on_loaded
+/footer/recommend.heading: id=recommend.heading, display=none
+
+if $CELL_COUNT == 0
+    #btn_more: display=none
+end
+
+if $SCREEN_SIZE > 7
+    if $SCREEN_WIDTH > 5
+        if $ORIENTATION == "portrait"
+            #showcase_recommend: height="(1pw-20dp-5dp*(2-1))/2*4/7*2+20dp+5dp*(2-1)+64dp", \
+                    column-count=2, cell-size="(1pw-20dp-5dp*(2-1))/2, (1pw-20dp-5dp*(2-1))/2*4/7"
+        else
+            #showcase_recommend: height="(1pw-20dp-5dp*(4-1))/4*4/7+20dp+64dp", \
+                    column-count=4, cell-size="(1pw-20dp-5dp*(4-1))/4, (1pw-20dp-5dp*(4-1))/4*4/7"
+        end
+    else
+        #showcase_recommend: height="(1pw-20dp-5dp*(2-1))/2*4/7*2+20dp+5dp*(2-1)+64dp", \
+                    column-count=2, cell-size="(1pw-20dp-5dp*(2-1))/2, (1pw-20dp-5dp*(2-1))/2*4/7"
+    end
+end

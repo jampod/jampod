@@ -1,0 +1,24 @@
+=begin cell
+
+=object panes: style=panes_query
+=object section: style=section_query.bar
+=object section: style=section_suggestion
+=object blank: style=blank_dim
+=object cell: style=cell_categories
+=object button: style=btn_close
+
+=begin query.bar
+=object image: style=img_query.bar
+=object button: style=btn_category
+=object textfield: style=textfield_keyword
+=object label: style=label_placeholder
+=object input: style=input_keyword
+=object button: style=btn_clear
+=object button: style=btn_search
+=end query.bar
+
+=begin suggestion
+=object showcase: style=showcase_suggestion
+=end suggestion
+
+=end cell

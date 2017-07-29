@@ -1,0 +1,18 @@
+=begin toolbar
+
+=begin sort
+=(object|button: style=btn_sort.ascending)= =(object|button: style=btn_sort.descending)=
+=end sort
+
+=object button: style=btn_layout
+=object checkbox: style=checkbox_expiry
+
+=begin edit
+=begin actions
+=(object button: style=btn_discard)=
+=end actions
+
+=object checkbox: style=checkbox_all
+=end edit
+
+=end toolbar

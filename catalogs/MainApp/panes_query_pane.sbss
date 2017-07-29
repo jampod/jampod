@@ -1,0 +1,15 @@
+import themes.sbss
+
+#showcase_query: id=showcase.query.history, width=1pw, height=1ph-36dp, display=none, \
+        column-count=1, cell-size="1pw, 40dp", selected-color=$LIGHT_COLOR_DIM, bounces=no, \
+        selectable=yes, script-when-selected=select_keyword
+
+#showcase_query.history: style=showcase_query, \
+        name=query.history, \
+        sortable=yes, sortkey=rowid, sortorder=descending
+
+/pane:
+
+if $NUMBER == 1
+    #showcase_query.history: display=object
+end

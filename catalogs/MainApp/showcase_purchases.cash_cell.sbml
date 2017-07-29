@@ -1,0 +1,7 @@
+=begin cell
+
+=(object label: title="구매상품", text="${product.title}", style=label_title)=
+=(object label: text="[등록일시] ${purchased-at}", style=label_desc)=
+=(object label: text="[구매종류] ${type}", style=label_desc, style=label_type)=
+
+=end cell

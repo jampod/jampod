@@ -1,0 +1,25 @@
+=begin cell
+
+=begin thumbnail
+=object label: style=label_thumbnail.new
+=object image: style=img_thumbnail.cover
+=object label: style=label_thumbnail.title
+=end thumbnail
+
+=begin list
+=object label: style=label_list.new
+=object image: style=img_list.cover
+=begin info
+=(object label: style=label_list.title)=
+=(object label: style=label_list.author)=
+=end info
+=end list
+
+=begin edit
+=object label: style=label_size
+=object blank: style=blank_mask
+=object image: style=img_deselected
+=object image: style=img_selected
+=end edit
+
+=end cell

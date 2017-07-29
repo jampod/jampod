@@ -1,0 +1,7 @@
+import themes.sbss
+
+#showcase_keywords: name=keywords.${vendor}, alternate-name=realtime.keywords, \
+        data-script=feed_keywords, \
+        width=1pw, height=1ph, \
+        column-count=1, cell-size="1pw, 50dp", \
+        selectable=yes, script-when-selected=search_keyword

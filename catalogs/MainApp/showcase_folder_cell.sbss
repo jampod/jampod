@@ -1,0 +1,6 @@
+import themes.sbss
+
+/cell/content: display=block, position=abs, gravity=left, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.0, \
+        text-align=left, text-color=$DEFAULT_TEXT_COLOR, \
+        padding-left=10dp

@@ -1,0 +1,11 @@
+=begin cell
+
+=object button: action="${action}", \
+                subview="${subview}", \
+                display-unit="${display-unit}", \
+                url="${url}", \
+                target=popup, \
+                label="${title}", \
+                style=btn_title
+
+=end cell

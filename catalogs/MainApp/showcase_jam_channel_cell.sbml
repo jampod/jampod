@@ -1,0 +1,21 @@
+=begin cell
+
+=object image: style=img_icon
+=object image: style=img_pin
+
+=begin title
+=(object label: style=label_title)=
+=end title
+
+=object image: style=img_arrow
+=object button: style=btn_menu
+
+=begin edit
+=object blank: style=blank_mask
+=object image: style=img_deselected
+=object image: style=img_selected
+=end edit
+
+=object blank: style=blank_line
+
+=end cell

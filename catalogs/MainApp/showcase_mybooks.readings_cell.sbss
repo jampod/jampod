@@ -1,0 +1,26 @@
+import themes.sbss
+
+#img_cover: width=75dp, height=100dp, position=abs, gravity=top-left, x=15dp, y=15dp, \
+        default-color=$DEFAULT_COVER_COLOR, mask-image=item_cover_mask.png, scale-mode=fit
+
+#btn_recent: action=popup, display-unit=S_MYBOOKS_RECENT, \
+        width=92dp, height=18dp, position=abs, gravity=top-left, x=15dp+75dp+10dp, y=17dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=0.8, \
+        label-align=center, label-color=$WHITE_COLOR, \
+        content-border-radius=9dp, content-background-color=$NAVY_COLOR
+
+#label_title: max-width=1pw-(15dp+75dp+10dp+10dp), \
+        position=abs, gravity=top-left, x=15dp+75dp+10dp, y=17dp+18dp+6dp, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.3, \
+        text-align=left, text-color=$NAVY_COLOR, \
+        line-break-mode=tail-truncation
+
+if "${template}" == "private"
+    #img_cover: uses-own-cover=yes, scale-mode=fill, content-gravity=center
+end
+
+if $SCREEN_WIDTH > 5
+    #img_cover: width=120dp, height=160dp
+    #btn_recent: width=100dp, height=20dp, x=15dp+120dp+10dp, label-font-size=0.9, content-border-radius=10dp
+    #label_title: max-width=1pw-(15dp+120dp+10dp+10dp), x=15dp+120dp+10dp, y=17dp+20dp+10dp, font-size=1.4
+end

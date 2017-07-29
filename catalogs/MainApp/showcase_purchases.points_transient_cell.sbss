@@ -1,0 +1,12 @@
+import common_ref.sbss
+
+#info_block: width=0.96pw, \
+                margin="10dp 0.02pw", padding="20dp 0", \
+                background-color="$_BODY_COLOR_01", \
+                display=block, align=center, \
+                font-family="$_FONT_DEFAULT", \
+                font-size=0.9, \
+                text-align=center, \
+                text-color="$_TEXT_COLOR_DEFAULT", \
+                paragraph-spacing=0.6em
+

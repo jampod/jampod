@@ -1,0 +1,39 @@
+=begin page
+
+=object button: action=page-back, style=btn_back
+=object image: style=img_logo
+
+=begin note
+북잼 계정(이메일)으로 로그인합니다.
+=end note
+
+=begin login
+
+=begin input: form=login
+=object textfield: id=email, placeholder="이메일", \
+        valid-format=email, message-when-invalid="이메일 형식이 유효하지 않습니다.", \
+        invalid-when-empty=yes, message-when-empty="이메일 주소를 입력하세요.", \
+        next-control=password, return-key-type=next, \
+        keyboard-type=email, auto-capitalization-type=none, \
+        style=text_email
+=begin clear
+=object button: action=clear, object=email, style=btn_clear
+=end clear
+=object textfield: id=password, placeholder="비밀번호", secure=yes, \
+        invalid-when-empty=yes, message-when-empty="비밀번호를 입력하세요.", \
+        keyboard-type=alphabet, next-control=login, return-key-type=go, \
+        style=text_password
+=begin clear
+=object button: action=clear, object=password, style=btn_clear
+=end clear
+=end input
+
+=object button: id=login, label="로그인", \
+        action=login, form=login, channel=bookjam, skips-restoring=yes, \
+        style=btn_login
+
+=object button: label="비밀번호 재설정", action=popup, display-unit=S_RESET_PASSWORD, style=btn_forget
+
+=end login
+
+=end page

@@ -1,0 +1,7 @@
+=begin cell
+
+=object label: text="실시간 검색어", style=label_title
+=object button: style=btn_close
+=object panes: style=panes_keywords
+
+=end cell

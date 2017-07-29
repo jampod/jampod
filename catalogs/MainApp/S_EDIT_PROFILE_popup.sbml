@@ -1,0 +1,39 @@
+=begin popup
+
+=object section: section=profile, style=section_popup
+
+=begin main: id=profile, display=none
+
+=object label: text="프로필 수정", style=label_title
+
+=begin note
+사용자명을 변경할 수 있습니다.
+=end note
+
+
+=begin reset
+
+=begin input: form=reset
+
+=object image: type=profile, style=img_profile, display=none, alt="프로필 이미지 숨긴 상태"
+
+=object textfield: id=name, text="${USER.NAME}", \
+                valid-format=".{2}.*", message-when-empty="사용자명을 입력하세요.", \
+                invalid-when-empty=yes, message-when-invalid="사용자명은 두 글자 이상이어야 합니다.", \
+                auto-capitalization-type=none, \
+                style=text_name
+=begin clear
+=object button: action=clear, object=name, style=btn_clear
+=end clear
+
+=end input
+
+=begin button
+=(object button: label="취소", action=popup-close, style=btn_cancel)==(object button: id=reset, label="확인", form=reset, action="update-name", action-when-done=reload, post-action=popup-close, style=btn_confirm)=
+=end button
+
+=end reset
+
+=end main
+
+=end popup

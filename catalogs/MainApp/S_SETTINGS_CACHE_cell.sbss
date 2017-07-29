@@ -1,0 +1,15 @@
+import themes.sbss
+
+#label_title: width=1pw, height=1ph, \
+        font-family=$SANSSERIF_LIGHT, text-align=left, \
+        text-color=$THEME_COLOR_109, \
+        content-background-color=$WHITE_COLOR, content-padding-left=20dp
+
+#btn_cache: width=50dp, position=abs, gravity=right, x=-20dp, \
+        label-font-family=$SANSSERIF_LIGHT, label-align=center, \
+        label-color=$HIGHLIGHT_COLOR, highlight-label-color=$BLACK_COLOR, \
+        content-padding-left=20dp
+
+if $SCREEN_WIDTH > 5
+    #label_title: font-size=1.1
+end

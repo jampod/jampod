@@ -1,0 +1,13 @@
+import showcase_settings_cell.sbss
+
+#img_channer: width=44dp, height=44dp, position=abs, gravity=right, x=-20dp
+
+if $LOGGED_IN == "yes"
+    #btn_title: label="${USER.NAME}", label-font-family=$SANSSERIF_MEDIUM
+    if "${USER.CHANNEL}" == "facebook"
+        #img_channer: filename=subview_icon_facebook.png
+    else
+        #img_channer: filename=subview_icon_mail.png
+    end
+end
+

@@ -1,0 +1,7 @@
+=begin cell
+
+=object blank: style=blank_line
+=object label: style=label_title
+
+=end cell
+ 

@@ -1,0 +1,10 @@
+=begin pane
+
+=object web: style=web_main
+=object progress: style=progress_main
+
+=begin form
+=object input: style=input_keyword
+=end form
+
+=end pane

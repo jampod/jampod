@@ -1,0 +1,30 @@
+=begin catalog
+
+=begin select
+결제 수단 선택
+=end select
+
+=begin payment
+
+=object checkbox: id="credit", value="CreditCard", style=checkbox_method
+=begin title
+=(object|label: text="신용카드", style=label_payment_title)=
+=end title
+=image: style=img_line
+
+=object checkbox: id="phone", value="Teledit", selected=yes, style=checkbox_method
+=begin title
+=(object|label: text="휴대폰결제", style=label_payment_title)=
+=end title
+=image: style=img_line
+
+=object checkbox: id="voucher", value="CultureVoucher", style=checkbox_method
+=begin title
+=(object|label: text="문화상품권(컬쳐캐쉬)", style=label_payment_title)=
+=end title
+
+=end payment
+
+=object button: label="결제하기", action="payment", method="#{method}", style=btn_payment
+
+=end

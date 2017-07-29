@@ -1,0 +1,189 @@
+import themes.sbss
+
+#img_thumbnail.cover: type=cover, cover="${item}", \
+        default-color=$DEFAULT_COVER_COLOR, mask-image=item_cover_mask.png, \
+        scale-mode=fit, content-gravity=bottom
+#label_thumbnail.new: text="•", display=none, \
+        font-family=$SANSSERIF_MEDIUM, text-align=left, text-color=$SUB_COLOR
+#label_thumbnail.title: text="${title}", width=0.96pw, \
+        font-family=$SANSSERIF_LIGHT, text-color=$DEFAULT_TEXT_COLOR, \
+        text-align=center, line-break-mode=middle-truncation
+
+#btn_thumbnail.download: type=download, action=download, item="${item}", ignore-adding-items=yes, \
+        label="다운로드", hidden=yes, position=abs, gravity=bottom, \
+        label-font-family=$SANSSERIF_MEDIUM, label-align=center, \
+        label-color=$WHITE_COLOR, selected-label-color=$WHITE_COLOR, \
+        content-background-color=$BLACK_COLOR_DEEP_DIM
+#btn_thumbnail.update: type=update, action=download, item="${item}", , ignore-adding-items=yes, \
+        label="업데이트", hidden=yes, position=abs, gravity=bottom, \
+        label-font-family=$SANSSERIF_MEDIUM, label-align=center, \
+        label-color=$WHITE_COLOR, selected-label-color=$WHITE_COLOR, \
+        content-background-color=$BLACK_COLOR_DEEP_DIM
+
+#img_list.cover: type=cover, cover="${item}", \
+        default-color=$DEFAULT_COVER_COLOR, mask-image=item_cover_mask.png, \
+        flow=yes, scale-mode=fit, content-gravity=center
+#label_list.new: text="•", position=abs, display=none, \
+        font-family=$SANSSERIF_MEDIUM, text-align=center, text-color=$SUB_COLOR
+#label_list.title: text="${title}", width=0.7pw, \
+        font-family=$SANSSERIF_LIGHT, text-color=$DEFAULT_TEXT_COLOR, \
+        text-align=left, line-break-mode=middle-truncation
+#label_list.author: text="${author}", width=0.7pw, \
+        font-family=$SANSSERIF_LIGHT, text-color=$SUB_TEXT_COLOR, \
+        text-align=left, line-break-mode=tail-truncation
+
+#label_list.download: type=download, item="${item}", text="다운로드", \
+        hidden=yes, position=abs, gravity=right, \
+        font-family=$SANSSERIF_MEDIUM, text-color=$NAVY_COLOR, text-align=right
+#btn_list.download: type=download, action=download, item="${item}", ignore-adding-items=yes, \
+        image=subview_btn_download.png, selected-image=subview_btn_downloading.png, \
+        hidden=yes, position=abs, gravity=right, \
+        label-color=$TRANSPARENT_COLOR, selected-label-color=$TRANSPARENT_COLOR
+#btn_list.update: type=update, action=download, item="${item}", ignore-adding-items=yes, \
+        image=subview_btn_download.png, selected-image=subview_btn_downloading.png, \
+        hidden=yes, position=abs, gravity=right, \
+        label-color=$TRANSPARENT_COLOR, selected-label-color=$TRANSPARENT_COLOR
+
+#label_expiry: type=expiry, product="${product}", \
+        hidden=yes, position=abs, font-family=$SANSSERIF_MEDIUM, \
+        text-align=center, text-color=$WHITE_COLOR, content-background-color=$BLACK_COLOR_DEEP_DIM
+
+#label_size: display=none, position=abs, font-family=$SANSSERIF_MEDIUM, text-color=$NAVY_COLOR
+#blank_mask: display=none, position=abs, color=$BLACK_COLOR_SWALLOWEST_DIM
+#img_selected: display=none, position=abs, filename=mybooksview_icon_selected.png
+#img_deselected: display=none, position=abs, filename=mybooksview_icon_deselected.png
+
+/cell/thumbnail: display=block, position=abs, gravity=bottom
+/cell/list: paragraph-spacing=0.2em
+
+if "${template}" == "private"
+    #img_thumbnail.cover: uses-own-cover=yes, scale-mode=fill, content-gravity=center
+    #img_list.cover: uses-own-cover=yes, scale-mode=fill, content-gravity=center
+end
+
+if $LAYOUT == "thumbnail"
+    #label_list.download: display=none
+    #btn_list.download: display=none
+    #btn_list.update: display=none
+
+    /cell/list: display=none
+    /cell/list.series: display=none
+else
+    #btn_thumbnail.download: display=none
+    #btn_thumbnail.update: display=none
+
+    /cell/thumbnail: display=none
+    /cell/thumbnail.series.count: display=none
+end
+
+if $SCREEN_WIDTH > 5
+    #img_thumbnail.cover: width=0.9pw, height=186dp
+    #label_thumbnail.new: width=132dp
+    #label_thumbnail.title: height=20dp, margin-top=10dp, font-size=1.1
+    #btn_thumbnail.download: width=110dp, height=35dp, y=-30dp, label-font-size=0.9
+    #btn_thumbnail.update: width=110dp, height=35dp, y=-30dp, label-font-size=0.9
+
+    #img_list.cover: width=84dp, height=104dp, margin-right=15dp
+    #label_list.new: width=20dp, height=10dp, y=16dp
+    #label_list.title: font-size=1.5
+    #label_list.author: font-size=1.0
+    #label_list.download: width=60dp, height=30dp, x=-40dp-15dp, font-size=0.9
+    #btn_list.download: width=40dp, height=40dp, x=-10dp
+    #btn_list.update: width=40dp, height=40dp, x=-10dp
+
+    #label_expiry: font-size=0.9
+
+    /cell/thumbnail.series.count: height=30dp, y=-32dp
+    /cell/list/info: margin-top=35dp
+    /cell/list/info/series.count: margin-top=1em
+
+    if $LAYOUT == "thumbnail"
+        #label_expiry: width=129dp, height=35dp, gravity=bottom, y=-181dp, font-size=0.9
+        #label_size: y=-181dp
+        #img_selected: width=40dp, height=40dp, gravity=bottom, y=-103dp
+        #img_deselected: width=40dp, height=40dp, gravity=bottom, y=-103dp
+    else
+        #label_expiry: width=84dp, height=26dp, gravity=left-bottom, font-size=0.9
+        #blank_mask: width=1pw, height=1ph-4dp
+        #img_selected: width=24dp, height=24dp, gravity=left, x=20dp
+        #img_deselected: width=24dp, height=24dp, gravity=left, x=20dp
+
+        if $ORIENTATION == "portrait"
+            #label_size: x=-40dp
+
+            /cell: margin="15dp 40dp"
+        else
+            #label_size: x=-30dp
+
+            /cell: margin="15dp 20dp"
+        end
+    end
+else
+    #img_thumbnail.cover: width=0.9pw, height=121dp
+    #label_thumbnail.new: width=87dp
+    #label_thumbnail.title: height=15dp, margin-top=5dp, font-size=0.75
+    #btn_thumbnail.download: width=70dp, height=26dp, y=-20dp, label-font-size=0.7
+    #btn_thumbnail.update: width=70dp, height=26dp, y=-20dp, label-font-size=0.7
+
+    #img_list.cover: width=46dp, height=58dp, margin-right=10dp
+    #label_list.new: width=20dp, height=5dp, x=5dp, y=10dp
+    #label_list.title: font-size=1.2
+    #label_list.author: height=0.75em, font-size=0.75
+    #label_list.download: width=50dp, height=20dp, x=-30dp-10dp, font-size=0.7
+    #btn_list.download: width=30dp, height=30dp, x=-5dp
+    #btn_list.update: width=30dp, height=30dp, x=-5dp
+
+    /cell/thumbnail.series.count: height=20dp, y=-20dp
+    /cell/list/info: margin-top=5dp
+    /cell/list/info/series.count: margin-top=0.4em
+
+    if $LAYOUT == "thumbnail"
+        #label_expiry: width=84dp, height=26dp, gravity=bottom, y=-115dp, font-size=0.7
+        #label_size: y=-115dp
+        #img_selected: width=26dp, height=26dp, gravity=bottom, y=-67dp
+        #img_deselected: width=26dp, height=26dp, gravity=bottom, y=-67dp
+    else
+        #label_expiry: width=56dp, height=18dp, gravity=left-bottom, x=15dp, y=-4dp, font-size=0.6
+        #label_size: x=-10dp
+        #blank_mask: width=1pw, height=1ph-4dp
+        #img_selected: width=22dp, height=22dp, gravity=left, x=10dp
+        #img_deselected: width=22dp, height=22dp, gravity=left, x=10dp
+
+        /cell: margin="10dp 20dp"
+    end
+end
+
+if $EDITING == "yes"
+    #label_expiry: display=none
+    #label_size: display=object
+
+    if $STATE == "selected"
+        #img_selected: display=object
+
+        if $LAYOUT == "list"
+            #blank_mask: display=object
+        end
+    else
+        #img_deselected: display=object
+    end
+
+    if $LAYOUT == "list"
+        #label_list.title: width=0.6pw
+        #label_list.author: width=0.6pw
+
+        if $SCREEN_WIDTH > 5
+            #label_list.new: x=49dp
+
+            /cell: margin-left=64dp
+        else
+            #label_list.new: x=27dp
+
+            /cell: margin-left=42dp
+        end
+    end
+end
+
+if $IS_UNREAD == "yes"
+    #label_thumbnail.new: display=object
+    #label_list.new: display=object
+end

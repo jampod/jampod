@@ -1,0 +1,13 @@
+=begin popup: action-when-touched=popup-close
+
+=object section: section=terms, style=section_popup
+
+=begin main: id=terms, display=none
+
+=object web: url="${url}", style=web_terms
+
+=end main
+
+=object button: action=popup-close, style=btn_close
+
+=end popup

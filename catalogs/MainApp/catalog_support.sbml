@@ -1,0 +1,48 @@
+=begin catalog
+
+=begin input: form=inquiry
+
+=object section: style=section_email
+
+=begin email
+=object textfield: id=email, text="${USER.EMAIL}", placeholder="이메일", \
+        keyboard-type=email, auto-capitalization-type=none, \
+        return-key-type=next, next-control=message, \
+        valid-format=email, message-when-invalid="이메일 주소가 유효하지 않습니다.", \
+        invalid-when-empty=yes, message-when-empty="이메일 주소를 입력하세요.", \
+        style=text_email
+=end email
+
+=begin note
+문의할 내용을 입력하세요.
+=end note
+
+=object section: style=section_message
+
+=begin message
+=object text: id=message, \
+        invalid-when-empty=yes, message-when-empty="문의할 내용을 입력하세요.", \
+        style=text_message
+=end message
+
+=begin note
+입력하신 이메일 주소로 답변메일이 발송됩니다. 보통 영업일 1~2일 이내에 답변이 완료되므로 답변메일이 오지 않을 경우, 스팸메일함을 확인해주세요.
+=end note
+
+=end input
+
+=object button: label="문의하기", action=inquiry, form=inquiry, \
+        action-when-done=reload, \
+        style=btn_register
+
+=begin info
+=begin title
+고객센터
+=end title
+=begin note
+Tel. =[:link="tel:1544-9101"|1544-9101]= (발신자 부담전화)
+운영시간 : 평일 오전 10시 ~ 오후 6시 (점심시간: 오후 1시 ~ 2시, 토요일 및 공휴일 휴무)
+=end note
+=end info
+
+=end catalog

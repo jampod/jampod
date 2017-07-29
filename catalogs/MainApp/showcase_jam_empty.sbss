@@ -1,0 +1,17 @@
+import themes.sbss
+
+#btn_import: label="파일 가져오기", action=popup, display-unit=S_JAM_IMPORT, \
+        width=240dp, height=40dp, position=abs, gravity=center, y=20dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.1, \
+        label-align=center, label-color=$WHITE_COLOR, highlight-label-color=$WHITE_COLOR, \
+        content-background-color=$MAIN_COLOR, highlight-background-color=$SUB_COLOR
+
+/empty/message: display=block, padding="0 30dp", \
+        position=abs, gravity=center, y=-60dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.1, \
+        text-color=$DEFAULT_TEXT_COLOR, text-align=center, \
+        line-spacing=0.4em, paragraph-spacing=0.4em
+
+if $DISPLAY_UNIT == "S_JAM_CHANNEL"
+    #btn_import: display=none
+end

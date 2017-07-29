@@ -1,0 +1,36 @@
+=begin page
+
+=object button: action=page-back, style=btn_back
+
+=object image: style=img_logo
+=begin note
+로그인하는 카카오 계정이 북잼 계정으로 사용됩니다.
+=end note
+
+=begin login
+
+=begin terms: form=login
+
+=begin all
+=(object checkbox: id=terms_all, action=toggle, action-when-selected=property, params-when-selected="group=terms,properties=\"selected=yes\"", action-when-deselected=property, params-when-deselected="group=terms,properties=\"selected=no\"", style=checkbox_all)= =[terms:action=toggle, object=terms_all|모두 동의]=
+=end all
+
+=begin each
+=(object checkbox: id=terms_member, group=terms, valid-when-selected=yes, message-when-invalid="이용약관에 동의하셔야 합니다.", style=check_each)= =[terms:action=toggle, object=terms_member|이용약관 동의]=(필수) =[terms: action=popup, display-unit=S_TERM1|[보기]]=
+=(object checkbox: id=terms_use, group=terms, valid-when-selected=yes, message-when-invalid="개인정보 수집 및 이용에 동의하셔야 합니다.", style=check_each)= =[terms:action=toggle, object=terms_use|개인정보 수집 및 이용 동의]=(필수) =[terms: action=popup, display-unit=S_TERM2|[보기]]=
+=begin: display=none
+=(object checkbox: id=terms_option, group=terms, style=check_each)= =[terms:action=toggle, object=terms_option|개인정보 선택항목에 대한 수집 및 이용 동의]= =[terms: action=link, url=""|[보기]]=
+=end
+=end each
+
+=end terms
+
+=object button: label="로그인", action=authorize, form=login, channel=kakao, \
+        authorize-url="https://kauth.kakao.com/oauth/authorize", \
+        authorize-params="client_id=f148082931e704f4d76d9d88291bc935,response_type=code,redirect_uri=https://cloud.bookjam.net/api/v2.2/auth/kakao/${APPID}", \
+        authorize-script=authorize, skips-restoring=yes, \
+        style=btn_login
+
+=end login
+
+=end page

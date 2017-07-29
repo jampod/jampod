@@ -1,0 +1,18 @@
+import themes.sbss
+
+#label_keyword: id=label.keyword, width=1pw, height=24dp, \
+        position=abs, gravity=center, y=-100dp, \
+        font-family=$SANSSERIF_BOLD, font-size=1.8, \
+        text-color=$WHITE_COLOR, text-align=center
+
+#label_waiting: width=1pw, position=abs, gravity=bottom, y=-0.1ph, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.1, \
+        text-color=$WHITE_COLOR, text-align=center
+
+#progress: type=time, owner=progress.timer, inverts-value=yes, \
+        progress-color=$WHITE_COLOR, track-color=$LIGHT_COLOR_DIM, \
+        width=0.5pw, height=2dp, position=abs, gravity=center, y=-70dp
+
+#progress_timer: id=progress.timer, time=00:01.200
+
+/popup: page-background-color=$BLACK_COLOR_DIM, script-when-loaded=on_loaded

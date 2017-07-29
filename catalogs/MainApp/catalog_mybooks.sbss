@@ -1,0 +1,50 @@
+import themes.sbss
+
+#section_readings: section=readings, width=1pw, height=130dp, \
+        follows-scroll=yes, owner=mybooks.app, min-y=-130dp, \
+        content-background-color=$TOOLBAR_BG_COLOR
+
+#showcase_readings: type=readings, alternate-name=mybooks.readings, \
+        width=1pw, height=1ph, position=abs, gravity=top, \
+        column-count=1, cell-size="1pw, 1ph", max-cell-count=1, \
+        selectable=yes, action-when-selected=open, params-when-selected="target=owner,ignore-adding-items=yes", \
+        reloads-when-appear=yes
+
+#blank_line.bottom: color=$LIGHT_COLOR_DIM, width=1pw, height=1dp, \
+        position=abs, gravity=bottom
+
+#showcase_apps: id=mybooks.app, type=apps, alternate-name=mybooks.apps, \
+        width=1pw, height=1ph, position=abs, gravity=top, \
+        column-count=1, cell-size="1pw, 84dp", header-spacing=130dp, \
+        sortable=yes, sortkey=title, sortorder=ascending, \
+        selectable=yes, action-when-selected=page, \
+        reloads-when-appear=yes, has-footer=yes, \
+        has-own-title=yes, has-own-navibar=yes
+
+#btn_login: label="로그인", action=login, \
+        width=240dp, height=40dp, position=abs, gravity=center, y=130dp/2+10dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.1, \
+        label-align=center, label-color=$WHITE_COLOR, highlight-label-color=$WHITE_COLOR, \
+        content-background-color=$MAIN_COLOR, highlight-background-color=$SUB_COLOR
+
+/catalog: page-background-color=$SUBVIEW_BG_COLOR
+/catalog/readings: id=readings, display=none
+/catalog/readings/buttons: display=block, position=abs, gravity=bottom, y=-10dp
+/catalog/not.logged/message: display=block, padding="0 30dp", \
+        position=abs, gravity=center, y=130dp/2-70dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.1, \
+        text-color=$BLACK_COLOR, text-align=center, \
+        line-spacing=0.4em, paragraph-spacing=0.4em
+
+if $LOGGED_IN == "yes"
+    /catalog/not.logged: display=none
+else
+    /catalog/logged.in: display=none
+end
+
+if $SCREEN_WIDTH > 5
+    #section_readings: height=200dp, min-y=-200dp
+    #showcase_apps: header-spacing=200dp, cell-size="1pw, 100dp"
+    #btn_login: width=320dp
+end
+

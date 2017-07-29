@@ -1,0 +1,16 @@
+import themes.sbss
+
+#blank_line: color=#D8D8D8, width=1pw, height=1dp, position=abs, gravity=top
+
+#img_category: filename=webview_bg_category.png, width=45dp, height=50dp, \
+        position=abs, gravity=left
+#btn_category: id=btn.category.${name}, action=show, params="group=search.categories,toggle=yes", \
+        width=44dp, height=44dp, position=abs, gravity=left
+
+#btn_webview: owner=web.${name}, target=owner,
+#btn_backward: image=webview_btn_backward.png, \
+        type=backward, action=backward, owner=web.${name}, target=owner, \
+        width=32dp, height=32dp, position=abs, gravity=right, x=-5dp, \
+        hides-when-disabled=yes
+
+/toolbar: page-background-color=#F5F5F5, script-when-loaded=on_loaded

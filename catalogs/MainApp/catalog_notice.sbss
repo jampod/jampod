@@ -1,0 +1,3 @@
+import themes.sbss
+
+/catalog: page-background-color=$SUBVIEW_BG_COLOR

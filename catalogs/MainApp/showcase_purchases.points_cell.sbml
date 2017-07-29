@@ -1,0 +1,13 @@
+=begin cell
+
+=begin title
+=(object label: title="구매상품", text="${product.title}", style=label_title)=
+=end
+
+=(object label: text="[등록일시] ${purchased-at}", style=label_date)=
+=(object label: text="[거래번호] ${otid}", style=label_receipt)=
+=begin none: display=none
+=(object label: text="[유효기간] ${expired-at}", style=label_expired_date)=
+=end
+
+=end cell

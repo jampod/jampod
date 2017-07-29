@@ -1,0 +1,9 @@
+=begin cell
+
+=begin keyword
+${keyword}
+=end keyword
+
+=object blank: style=blank_line
+
+=end cell

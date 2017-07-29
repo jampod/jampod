@@ -1,0 +1,6 @@
+import themes.sbss
+
+#btn_more: label="더 많은 잼을 발견해보세요", action=page, display-unit=S_STORE, \
+        height=26dp, content-padding="0dp 18dp", position=abs, gravity=center, y=-5dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=0.9, label-color=$DEFAULT_COLOR, \
+        content-border-radius=13dp, content-border-color=$LIGHT_COLOR, content-border-width=1dp

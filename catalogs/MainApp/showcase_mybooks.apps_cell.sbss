@@ -1,0 +1,19 @@
+import themes.sbss
+
+#img_icon: type=icon, app="${app}", default-color=$LIGHT_COLOR, \
+        width=60dp, height=60dp, position=abs, gravity=left, x=15dp, \
+        content-border-radius=5dp
+
+#label_title: text="${title}", width=1pw-(15dp+60dp+15dp+50dp), height=24dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.2, text-color=$DARK_TEXT_COLOR, \
+        number-of-lines=1, line-break-mode=tail-truncation, \
+        position=abs, gravity=left-top, x=15dp+60dp+15dp, y=12dp
+
+#img_arrow: filename=subview_btn_arrow.png, width=44dp, height=44dp, position=abs, gravity=right
+
+#blank_line: color=$LIGHT_LINE_COLOR, width=1pw, height=1dp, position=abs, gravity=bottom
+
+if $SCREEN_WIDTH > 5
+    #img_icon: width=76dp, height=76dp
+    #label_title: width=1pw-(15dp+76dp+15dp+50dp), height=24dp, x=15dp+76dp+15dp, font-size=1.3
+end

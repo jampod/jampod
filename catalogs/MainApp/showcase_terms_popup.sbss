@@ -1,0 +1,16 @@
+import themes.sbss
+
+#section_popup: position=abs, background-color=$WHITE_COLOR
+#web_terms: width=1pw, height=1ph
+#btn_close: width=44dp, height=44dp, image=subview_btn_close.png, position=abs, gravity=top
+
+/popup: page-background-color=$BLACK_COLOR_DIM
+
+if $SCREEN_WIDTH > 5
+    #section_popup: width=0.8pw, height=0.8ph, gravity=center
+    #btn_close: display=none
+else
+    #section_popup: width=0.9pw, height=0.9ph, gravity=top, y=40dp
+    #btn_close: x=0.45pw, y=5dp
+end
+

@@ -1,0 +1,29 @@
+import themes.sbss
+
+#section_heading: section=heading, width=1pw, height=44dp, \
+        position=abs, gravity=top, y=150dp, margin-bottom=10dp
+
+#label_heading: text="나의 잼", height=20dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.1, text-color=$DARK_TEXT_COLOR
+
+#btn_jam: action=subview, subview=V_JAM, target=popup, \
+        width=1pw, height=20dp+6dp, position=abs, gravity=bottom-left, y=-6dp
+
+#blank_line: color=$LIGHT_LINE_COLOR, width=1pw-10dp*2, height=1dp, \
+        position=abs, gravity=bottom
+
+/header: padding-top=120dp+30dp
+/header/heading: id=heading, display=none
+/header/heading/title: display=block, position=abs, gravity=bottom-left, x=12dp, y=-6dp
+/header/empty: id=empty, display=none
+/header/empty/message: display=block, position=abs, gravity=top, y=130dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=0.9, paragraph-spacing=4dp, \
+        text-align=center, text-color=$DEFAULT_TEXT_COLOR
+
+if $EDITING == "yes"
+    #checkbox_edit: selected=yes
+end
+
+if $CELL_COUNT == 0
+    #section_heading: display=none
+end

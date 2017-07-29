@@ -1,0 +1,98 @@
+import themes.sbss
+
+#showcase_jam: id=showcase.jam, type=packages, alternate-name=home, \
+        width=1pw, height=1ph, position=abs, gravity=top, \
+        column-count=2, cell-size="(1pw-20dp-5dp*(2-1))/2, (1pw-20dp-5dp*(2-1))/2*(2/3)+40dp", max-cell-count=32, \
+        content-margin="0dp 10dp", cell-spacing=5dp, \
+        has-header=yes, has-footer=yes, scroll-indicator-hidden=yes, \
+        selectable=yes, action-when-selected=app, \
+        action-when-selected@channel=app, params-when-selected@channel="sortkey=running,sortorder=descending", \
+        action-when-long-pressed=popup, params-when-long-pressed="alternate-name=jam.menu", \
+        sortable=yes, sortkey=running, sortorder=descending, \
+        keeps-offscreen-cells=yes, reloads-when-appear=yes
+
+#section_realtime.keywords.widget: section=realtime.keywords.widget, \
+        width=1pw, height=30dp, position=abs, gravity=top, y=120dp, \
+        owner=showcase.jam, follows-scroll=yes, min-y=20dp+60dp
+
+#section_menu: id=home.menu, section=menu, \
+        width=1pw, height=64dp, position=abs, gravity=top, \
+        content-background-color=$MAIN_COLOR, \
+        script-when-resume=on_resume_menu
+
+#section_search.bar: id=home.search.bar, section=search.bar, \
+        owner=showcase.jam, follows-scroll=yes, min-y=20dp, \
+        width=1pw, height=60dp, position=abs, gravity=top, y=60dp, \
+        content-background-color=$MAIN_COLOR
+
+#section_categories: group=query.categories, section=categories, hidden=yes, \
+        owner=showcase.jam, follows-scroll=yes, min-y=80dp, \
+        width=1pw, height=150dp+44dp, position=abs, gravity=top, y=120dp
+
+#img_logo: filename=subview_img_logo.png, \
+        width=90dp, height=24dp, position=abs, gravity=top, y=28dp
+
+#btn_sidebar: image=subview_btn_sidebar.png, action=sidebar, \
+        width=44dp, height=44dp, position=abs, gravity=left-top, y=20dp
+#btn_channel: image=subview_btn_channel.png, action=page, display-unit=S_STORE, \
+        width=44dp, height=44dp, position=abs, gravity=right-top, y=20dp
+#img_notice: type=notice, catalog=Notice, filename="subview_icon_new_invert.png", \
+        width=13dp, height=13dp, position=abs, gravity=left-top, x=26dp, y=28dp
+
+#panes_category: id=home.category, name=home.category, \
+        width=1pw, height=1ph, position=abs, gravity=top, \
+        single-mode=yes, script-when-paging=on_paging
+#label_category: id=label.category, width=150dp, height=44dp, \
+        position=abs, gravity=bottom-left, x=15dp+44dp, y=-12dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.2, text-color=$LIGHT_COLOR
+#btn_category: id=btn.category, image=category_btn_web.png, \
+        action=show, params="group=query.categories,toggle=yes", \
+        width=44dp, height=44dp, position=abs, gravity=left-bottom, x=15dp, y=-12dp
+#btn_search: action=popup, display-unit=S_QUERY, post-action=hide, post-params="group=query.categories", \
+        width=1pw-30dp, height=44dp, position=abs, gravity=bottom, y=-12dp, \
+        content-background-color=$WHITE_COLOR
+#btn_search.home: image=searchbar_btn_go.png, action=script, script=goto_search_home, \
+        width=38dp, height=38dp, position=abs, gravity=right-bottom, x=-15dp, y=-15dp, display=none
+
+#blank_dim: group=query.categories, color=$BLACK_COLOR_DEEP_DIM, hidden=yes, \
+        width=1pw, height=1ph-60dp, position=abs, gravity=top, y=60dp
+
+#cell_categories: display-unit=S_QUERY.CATEGORIES, \
+        width=1pw, height=150dp, position=abs, gravity=top
+
+#btn_close: image=subview_btn_close.png, action=hide, params="group=query.categories", \
+        width=44dp, height=44dp, position=abs, gravity=right-top, y=150dp
+
+#cell_realtime.keywords.widget: id=cell.realtime.keywords.widget, display-unit=S_REALTIME.KEYWORDS.WIDGET, \
+        width=1pw, height=1ph, position=abs, gravity=center
+
+#showcase_mediabar.mini: id=showcase.mediabar.mini, group=home.mediabar, hidden=yes, \
+        type=jukebox, alternate-name=home.mediabar.mini, \
+        width=44dp+17dp, height=44dp, position=abs, gravity=left-bottom, \
+        has-header=yes, header-height=44dp, max-cell-count=0
+
+#showcase_mediabar: id=showcase.mediabar, group=home.mediabar, hidden=yes, \
+        type=jukebox, alternate-name=home.mediabar, \
+        width=1pw, height=40dp, position=abs, gravity=bottom, \
+        has-header=yes, header-height=40dp, max-cell-count=0, \
+        script-when-activate=on_activate_mediabar, \
+        script-when-resume=on_resume_mediabar
+
+/catalog: page-background-color=$WHITE_COLOR, \
+        script-when-loaded=on_loaded, script-when-unloaded=on_unloaded
+/catalog/menu: id=menu, display=none
+/catalog/search.bar: id=search.bar, display=none
+/catalog/categories: id=categories, display=none
+/catalog/realtime.keywords.widget: id=realtime.keywords.widget, display=none
+
+if $SCREEN_SIZE > 7
+    if $SCREEN_WIDTH > 5
+        if $ORIENTATION == "landscape"
+            #showcase_jam: column-count=4, cell-size="(1pw-20dp-5dp*(4-1))/4, ((1pw-20dp-5dp*(4-1))/4)*(2/3)+40dp"
+        else
+            #showcase_jam: column-count=3, cell-size="(1pw-20dp-5dp*(3-1))/3, ((1pw-20dp-5dp*(3-1))/3)*(2/3)+40dp"
+        end
+    else
+        #showcase_jam: column-count=3, cell-size="(1pw-20dp-5dp*(3-1)/3, ((1pw-20dp-5dp*(3-1))/3)*(2/3)+40dp"
+    end
+end

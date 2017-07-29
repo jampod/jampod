@@ -1,0 +1,75 @@
+import themes.sbss
+
+#img_my.title: width=40dp, height=60dp, scale-mode=fit
+#label_my.cash: width=0.94pw-70dp-(64dp+20dp+2dp), height=60dp, content-padding-right=10dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.8, \
+        text-color=$DEFAULT_TEXT_COLOR, text-align=right, \
+        waiting-text="•••"
+#label_my.cash.desc: width=64dp, height=60dp, font-family=$SANSSERIF_LIGHT, \
+        text-color=$DEFAULT_TEXT_COLOR, text-align=left, font-size=0.9
+
+#checkbox_product: image="subview_icon_deselected.png", selected-image="subview_icon_selected.png", \
+        select-mode=single, group=products, \
+        width=0.94pw, height=55dp, scale-mode=fit, \
+        content-padding="20dp 0.94pw-40dp 20dp 10dp", \
+        saves-state=yes, disable-when-selected=yes
+
+#label_product.title: height=55dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1, \
+        text-color=$DEFAULT_TEXT_COLOR, text-align=left
+#label_product.price: width=100dp, height=55dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1, \
+        text-color=$MAIN_COLOR, text-align=right, waiting-text="•••"
+#blank_product.line: width=0.94pw, height=1dp, color=$LIGHT_LINE_COLOR
+
+#btn_charge: action=purchase, product="#{products}", \
+        width=0.94pw, height=44dp, \
+        label-font-family=$SANSSERIF_LIGHT, label-font-size=1.1, \
+        label-color=$WHITE_COLOR, highlight-label-color=$WHITE_COLOR, \
+        content-background-color=$MAIN_COLOR, highlight-background-color=$SUB_COLOR
+
+#cash_10000:  value="P_0000_000145128", product="P_0000_000145128"
+#cash_30000:  value="P_0000_000145129", product="P_0000_000145129"
+#cash_50000:  value="P_0000_000145130", product="P_0000_000145130"
+#cash_100000: value="P_0000_000145131", product="P_0000_000145131"
+
+#title_10000:  text="10,000 캐시"
+#title_30000:  text="30,000 캐시"
+#title_50000:  text="50,000 캐시"
+#title_100000: text="100,000 캐시"
+
+/catalog: page-background-color=$SUBVIEW_BG_COLOR
+
+/catalog/my: display=block, width=0.94pw, margin-top=16dp
+/catalog/my/title: display=block, width=70dp, height=60dp, background-color=$MAIN_COLOR, \
+        flow=yes, text-align=center
+/catalog/my/cash: display=block, width=0.94pw-70dp, height=60dp, \
+        padding-right=20dp, vertical-align=top, text-align=right, \
+        border-width=1dp, border-color=$LIGHT_LINE_COLOR
+
+/catalog/products: margin="0.02pw 0.03pw", border-width=1dp, border-color=$LIGHT_LINE_COLOR
+/catalog/products/title: text-align=left, margin="-55dp 0 0 40dp"
+/catalog/products/price: text-align=right, margin="-55dp 20dp 0 0"
+/catalog/products/option/title: text-align=left, margin="-55dp 0 0 40dp"
+/catalog/products/option/price: text-align=right, margin="-55dp 20dp 0 0"
+
+/catalog/notice: font-family=$SANSSERIF_LIGHT, text-color=$LIGHT_TEXT_COLOR, \
+        margin="0.06pw 0.03pw+6dp", line-spacing=0.2em, paragraph-spacing=0.8em
+/catalog/notice/title: margin-bottom=0.03pw, font-size=1
+/catalog/notice/body: margin-left=0.6em, indent-width=-0.6em , font-size=0.9
+
+if $STORE == "apple"
+    #cash_10000:  value="P_0000_000145132", product="P_0000_000145132"
+    #cash_30000:  value="P_0000_000145133", product="P_0000_000145133"
+    #cash_50000:  value="P_0000_000145134", product="P_0000_000145134"
+    #cash_100000: value="P_0000_000145135", product="P_0000_000145135"
+
+    #title_10000:  text="10,000 캐시"
+    #title_30000:  text="30,000 + 1,200 캐시"
+    #title_50000:  text="50,000 + 2,500 캐시"
+    #title_100000: text="100,000 + 6,300 캐시"
+
+    if $LOGGED_IN != "yes"
+        %option: display=none
+    end
+end

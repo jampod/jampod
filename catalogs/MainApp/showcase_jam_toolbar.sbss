@@ -1,0 +1,66 @@
+import themes.sbss
+
+#btn_edit: label="편집", action=edit, target=owner, height=30dp, content-padding="0 10dp", \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.0, \
+        label-color=$DEFAULT_TEXT_COLOR, selected-label-color=$DEFAULT_TEXT_COLOR, \
+        content-border-width=1dp, content-border-radius=3dp, \
+        content-border-color=$DEFAULT_COLOR
+
+#btn_sort: action=sort, target=owner, height=20dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.0, \
+        label-color=$LIGHT_TEXT_COLOR, selected-label-color=$DEFAULT_TEXT_COLOR
+
+#btn_sort.recent: label="최근순", sortkey=running, sortorder=descending, style=btn_sort
+#btn_sort.title: label="이름순", sortkey=title, sortorder=ascending, style=btn_sort
+
+#label_seperator: height=20dp, font-family=$SANSSERIF_MEDIUM, font-size=0.9, \
+        text-color=$DEFAULT_TEXT_COLOR, text-align=center
+
+#btn_remove: label="파일 삭제", action=remove, target=owner, \
+        width=80dp, height=44dp, position=abs, gravity=left, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$NAVY_COLOR, highlight-label-color=$NAVY_COLOR
+
+#btn_import: action=popup, display-unit=S_JAM_IMPORT, \
+        width=44dp, height=44dp, position=abs, gravity=right, \
+        image=subview_btn_import.png
+
+#checkbox_all: id=select_all, label="모두 선택", width=80dp, height=44dp, position=abs, gravity=right, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$NAVY_COLOR, selected-label-color=$NAVY_COLOR, highlight-label-color=$NAVY_COLOR, \
+        action-when-selected=select-all, params-when-selected="target=owner", \
+        action-when-deselected=deselect-all, params-when-deselected="target=owner"
+
+if $SORT_KEY == "title"
+    #btn_sort.title: selected=yes
+end
+
+if $SORT_KEY == "running"
+    #btn_sort.recent: selected=yes
+end
+
+if $EDITING == "yes"
+    #btn_edit: label="완료", action=edit-done
+end
+
+/toolbar: page-background-color=$LIGHT_COLOR_DIM
+/toolbar/sort: pack=yes, display=block, height=34dp, position=abs, gravity=bottom
+
+if $EDITING == "yes"
+    #btn_sort.recent: display=none
+    #btn_sort.title: display=none
+    #label_seperator: display=none
+    #btn_import: display=none
+
+    /toolbar/sort: display=none
+    /toolbar/edit/actions: display=block
+else
+    #checkbox_all: display=none
+    #btn_remove: display=none
+
+    /toolbar/edit: display=none
+end
+
+if $DISPLAY_UNIT == "S_JAM_CHANNEL"
+    #btn_import: display=none
+end

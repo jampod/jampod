@@ -1,0 +1,27 @@
+import themes.sbss
+
+#section_email: section=section.email, width=0.86pw, height=50dp, margin-bottom=10dp, \
+        content-background-color=$SUBVIEW_BG_DARK_COLOR
+#section_message: section=section.message, width=0.86pw, height=0.4pw, margin-bottom=20dp, \
+        content-background-color=$SUBVIEW_BG_DARK_COLOR
+
+#text_email: width=1pw-30dp, height=1ph, position=abs, gravity=center, \
+        font-family=$SANSSERIF_LIGHT, text-color=$BLACK_COLOR
+#text_message: width=1pw-20dp, height=1ph, position=abs, gravity=center, \
+        font-family=$SANSSERIF_LIGHT, text-color=$BLACK_COLOR
+#btn_register: width=0.86pw, height=44dp, margin="30dp 0", \
+        label-font-family=$SANSSERIF_LIGHT, label-font-size=1.1, \
+        label-color=$WHITE_COLOR, highlight-label-color=$WHITE_COLOR, \
+        content-background-color=$MAIN_COLOR, highlight-background-color=$SUB_COLOR
+
+/catalog: font-family=$SANSSERIF_LIGHT, text-color=$THEME_COLOR_107, \
+        line-spacing=0.6em, paragraph-spacing=0.6em, \
+        page-background-color=$SUBVIEW_BG_COLOR, margin=0.07pw
+/catalog/input/email: id=section.email, display=none
+/catalog/input/message: id=section.message, display=none
+/catalog/input/note: margin="20dp 0 0 0"
+/catalog/info: font-size=0.9em, padding-top=20dp
+
+if $SCREEN_WIDTH > 5
+    /catalog: font-size=1.1
+end

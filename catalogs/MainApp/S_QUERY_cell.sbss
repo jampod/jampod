@@ -1,0 +1,61 @@
+import themes.sbss
+
+#panes_query: alternate-name=query, \
+        width=1pw-20dp, height=1ph-(76dp+10dp+10dp+238dp), max-height=40dp+40dp*6+36dp, \
+        position=abs, gravity=top, y=76dp+10dp, \
+        number-of-panes=1, pane-display-unit=P_QUERY, \
+        has-navibar=yes, navibar-cell-size="1pw-20dp, 40dp", \
+        has-toolbar=yes, toolbar-height=36dp, auto-hides-toolbar=no, \
+        content-background-color=$WHITE_COLOR
+
+#section_query.bar: id=query.bar, section=query.bar, \
+        width=1pw, height=76dp, position=abs, gravity=top, \
+        content-background-color=$MAIN_COLOR
+
+#section_suggestion: id=suggestion, section=suggestion, hidden=yes, \
+        width=1pw, height=36dp*5, position=abs, gravity=top, y=76dp
+
+#blank_dim: group=query.categories, color=$BLACK_COLOR_DEEP_DIM, hidden=yes, \
+        width=1pw, height=1ph-76dp, position=abs, gravity=top, y=76dp
+
+#cell_categories: group=query.categories, \
+        alternate-name=query.categories, display-unit=S_QUERY.CATEGORIES, \
+        width=1pw, height=150dp, position=abs, gravity=top, y=76dp, hidden=yes
+
+#btn_close: image=subview_btn_close.png, action=hide, params="group=query.categories", \
+        width=44dp, height=44dp, position=abs, gravity=right-top, y=76dp+150dp
+
+#img_query.bar: default-color=$WHITE_COLOR, \
+        width=1pw-(5dp+44dp+5dp), height=44dp, position=abs, gravity=left-top, x=5dp, y=20dp+6dp
+#btn_category: id=btn.query.category, image=category_btn_web.png, \
+        action=show, params="group=query.categories,toggle=yes", \
+        post-action=hide, post-params="object=suggestion", \
+        width=44dp, height=44dp, position=abs, gravity=left-top, x=5dp, y=20dp+6dp
+#textfield_keyword: id=textfield.keyword, return-key-type=search, \
+        script=search_keyword, form=search, related-objects=label.placeholder, \
+        action-when-editing@begin=hide, params-when-editing@begin="group=query.categories", \
+        script-when-editing@change=on_change_keyword, \
+        invalid-when-empty=yes, message-when-empty="검색어를 입력하세요.", \
+        width=1pw-(50dp+44dp+5dp), height=30dp, \
+        position=abs, gravity=left-top, x=50dp, y=20dp+6dp+7dp, \
+        font-family=$SANSSERIF_BOLD, font-size=1.4, text-color=$BLACK_COLOR, \
+        auto-capitalization-type=none
+#label_placeholder: id=label.placeholder, text="검색어 입력", height=30dp, \
+        position=abs, gravity=left-top, x=50dp, y=20dp+6dp+7dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.2, text-color=$LIGHT_COLOR
+#input_keyword: id=keyword, value=#{textfield.keyword}
+#btn_clear: image=textfield_btn_clear.png, action=clear, target=object, object=textfield.keyword, \
+        width=44dp, height=44dp, position=abs, gravity=right-top, x=-(5dp+44dp), y=20dp+6dp
+#btn_search: image=searchbar_btn_search.png, script=search_keyword, form=search, \
+        width=44dp, height=44dp, position=abs, gravity=right-top, x=-5dp, y=20dp+6dp, \
+        content-background-color=$SUB_COLOR
+
+#showcase_suggestion: id=showcase.suggestion, alternate-name=keyword.suggestion, \
+        data-script=load_suggestion, \
+        selectable=yes, script-when-selected=select_suggestion, \
+        width=1pw, height=1ph, column-count=1, cell-size="1pw, 36dp", \
+        content-background-color=$WHITE_COLOR
+
+/cell: page-background-color=$LIGHT_COLOR, script-when-loaded=on_loaded
+/cell/query.bar: id=query.bar, display=none, form=search
+/cell/suggestion: id=suggestion, display=none

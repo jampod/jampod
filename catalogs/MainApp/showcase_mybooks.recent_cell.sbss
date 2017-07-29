@@ -1,0 +1,10 @@
+import themes.sbss
+
+#img_cover: width=75dp, height=100dp, position=abs, gravity=top-left, x=15dp, y=15dp, \
+        default-color=$DEFAULT_COVER_COLOR, mask-image=item_cover_mask.png, scale-mode=fit
+
+#label_title: max-width=1pw-(15dp+75dp+10dp), \
+        position=abs, gravity=top-left, x=15dp+75dp+10dp, y=17dp+6dp, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.2, \
+        text-align=left, text-color=$WHITE_COLOR, \
+        line-break-mode=tail-truncation

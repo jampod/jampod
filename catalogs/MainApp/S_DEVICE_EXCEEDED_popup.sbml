@@ -1,0 +1,28 @@
+=begin popup
+
+=object section: section=device, style=section_popup
+
+=begin main: id=device, display=none
+
+=object label: text="기기 관리", style=label_title
+
+=begin note
+등록 가능한 기기(5대)를 초과했습니다.
+기기를 대체하실 수 있습니다.
+=end note
+
+=begin device
+=object checkbox: id=device_1, label="${DEVICE.NAME[1]}", value="${DEVICE.ID[1]}", style=checkbox_device
+=object checkbox: id=device_2, label="${DEVICE.NAME[2]}", value="${DEVICE.ID[2]}", style=checkbox_device
+=object checkbox: id=device_3, label="${DEVICE.NAME[3]}", value="${DEVICE.ID[3]}", style=checkbox_device
+=object checkbox: id=device_4, label="${DEVICE.NAME[4]}", value="${DEVICE.ID[4]}", style=checkbox_device
+=object checkbox: id=device_5, label="${DEVICE.NAME[5]}", value="${DEVICE.ID[5]}", style=checkbox_device
+=end device
+
+=begin button
+=(object button: label="나중에 로그인", action=logout, style=btn_skip)==(object button: label="대체하기", style=btn_replace)=
+=end button
+
+=end main
+
+=end popup

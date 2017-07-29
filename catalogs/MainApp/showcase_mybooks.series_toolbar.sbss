@@ -1,0 +1,67 @@
+import themes.sbss
+
+#btn_sort.descending: action=sort, sortkey=id, sortorder=descending, target=owner, \
+        width=51dp, height=30dp, label-font-family=$SANSSERIF_LIGHT
+#btn_sort.ascending: action=sort, sortkey=id, sortorder=ascending, target=owner, \
+        width=51dp, height=30dp, label-font-family=$SANSSERIF_LIGHT
+
+#btn_layout: target=owner, selected=yes, width=44dp, height=44dp, position=abs, gravity=left
+#btn_reading: action=popup, display-unit="${id}", alternate-name=mybooks.items.reading, \
+        width=44dp, height=44dp, position=abs, gravity=right, x=-40dp, \
+        image=mybooksview_icon_recent.png
+
+#checkbox_expiry: id=expiry, saves-state=yes, \
+        width=44dp, height=44dp, position=abs, gravity=right, \
+        image=mybooksview_toolbar_btn_time_off.png, \
+        selected-image=mybooksview_toolbar_btn_time_on.png, \
+        highlight-image=mybooksview_toolbar_btn_time_on.png, \
+        action-when-selected="show-expiry", params-when-selected="target=owner", \
+        action-when-deselected="hide-expiry", params-when-deselected="target=owner"
+
+#btn_discard: label="데이터 제거", action=discard-book, target=owner, \
+        width=80dp, height=44dp, position=abs, gravity=left, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$NAVY_COLOR, highlight-label-color=$NAVY_COLOR
+
+#checkbox_all: id=select_all, label="모두 선택", width=80dp, height=44dp, position=abs, gravity=right, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$NAVY_COLOR, selected-label-color=$NAVY_COLOR, highlight-label-color=$NAVY_COLOR, \
+        action-when-selected=select-all, params-when-selected="target=owner", \
+        action-when-deselected=deselect-all, params-when-deselected="target=owner"
+
+/toolbar: page-background-color=$TOOLBAR_BG_COLOR
+/toolbar/sort: pack=yes, display=block, height=34dp, position=abs, gravity=bottom
+
+if $SORT_ORDER == "ascending"
+    #btn_sort.ascending: enabled=no, active-color=$TRANSPARENT_COLOR, \
+            image=subview_btn_descending_selected.png, \
+            disable-image=subview_btn_descending_selected.png
+    #btn_sort.descending: image=subview_btn_ascending_deselected.png
+else
+    #btn_sort.ascending: image=subview_btn_descending_deselected.png
+    #btn_sort.descending: enabled=no, active-color=$TRANSPARENT_COLOR, \
+            image=subview_btn_ascending_selected.png, \
+            disable-image=subview_btn_ascending_selected.png
+end
+
+if $LAYOUT == "thumbnail"
+    #btn_layout: action=layout, layout=list, image=subview_btn_layout_list.png
+else
+    #btn_layout: action=layout, layout=thumbnail, image=subview_btn_layout_thumbnail.png
+end
+
+if $EDITING == "yes"
+    #btn_sort.ascending: display=none
+    #btn_sort.descending: display=none
+    #btn_layout: display=none
+    #checkbox_expiry: display=none
+    #btn_reading: display=none
+
+    /toolbar/sort: display=none
+    /toolbar/edit/actions: display=block
+else
+    #checkbox_all: display=none
+    #btn_discard: display=none
+
+    /toolbar/edit: display=none
+end

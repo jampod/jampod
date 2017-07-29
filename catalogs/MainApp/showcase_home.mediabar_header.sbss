@@ -1,0 +1,11 @@
+import themes.sbss
+
+#label_title: type=title, width=1pw, height=1ph, \
+        number-of-lines=2, line-break-mode=tail-truncation, \
+        font-family=$SANSSERIF_MEDIUM, font-size=0.7, \
+        text-align=left, text-color=$BLACK_COLOR
+
+#btn_minimize: label="<<", width=44dp, height=1ph, position=abs, gravity=right, \
+        action=show, target=group, group=home.mediabar, toggle=yes
+
+/header: page-background-color=#f00

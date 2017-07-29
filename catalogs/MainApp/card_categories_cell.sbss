@@ -1,0 +1,115 @@
+import themes.sbss
+
+#categories: display=none
+#categories.${NUMBER}: display=section
+#buttons: text-align=center, display=block, position=abs, gravity=top, paragraph-spacing=6dp
+
+#section_category: width=60dp, height=50dp
+#section_web: section=web, style=section_category
+#section_issue: section=issue, style=section_category
+#section_image: section=image, style=section_category
+#section_video: section=video, style=section_category
+#section_knowledge: section=knowledge, style=section_category
+#section_shopping: section=shopping, style=section_category
+#section_price: section=price, style=section_category
+#section_map: section=map, style=section_category
+#section_dic: section=dic, style=section_category
+#section_hashtag: section=hashtag, style=section_category
+#section_travel: section=travel, style=section_category
+#section_food: section=food, style=section_category
+#section_stay: section=stay, style=section_category
+#section_movie: section=movie, style=section_category
+#section_music: section=music, style=section_category
+#section_book: section=book, style=section_category
+#section_game: section=game, style=section_category
+#section_land: section=land, style=section_category
+#section_stock: section=stock, style=section_category
+#section_app: section=app, style=section_category
+
+#btn_category: width=60dp, height=50dp, position=abs, gravity=top
+#btn_web: script=select_web, style=btn_category
+#btn_issue: script=select_issue, style=btn_category
+#btn_image: script=select_image, style=btn_category
+#btn_video: script=select_video, style=btn_category
+#btn_knowledge: script=select_knowledge, style=btn_category
+#btn_shopping: script=select_shopping, style=btn_category
+#btn_price: script=select_price, style=btn_category
+#btn_map: script=select_map, style=btn_category
+#btn_dic: script=select_dic, style=btn_category
+#btn_hashtag: script=select_hashtag, style=btn_category
+#btn_travel: script=select_travel, style=btn_category
+#btn_food: script=select_food, style=btn_category
+#btn_stay: script=select_stay, style=btn_category
+#btn_movie: script=select_movie, style=btn_category
+#btn_music: script=select_music, style=btn_category
+#btn_book: script=select_book, style=btn_category
+#btn_game: script=select_game, style=btn_category
+#btn_land: script=select_land, style=btn_category
+#btn_stock: script=select_stock, style=btn_category
+#btn_app: script=select_app, style=btn_category
+
+#icon_category: width=25dp, height=25dp, position=abs, gravity=top, y=8dp
+#icon_web: filename=category_icon_web.png, style=icon_category
+#icon_issue: filename=category_icon_issue.png, style=icon_category
+#icon_image: filename=category_icon_image.png, style=icon_category
+#icon_video: filename=category_icon_video.png, style=icon_category
+#icon_knowledge: filename=category_icon_knowledge.png, style=icon_category
+#icon_shopping: filename=category_icon_shopping.png, style=icon_category
+#icon_price: filename=category_icon_price.png, style=icon_category
+#icon_map: filename=category_icon_map.png, style=icon_category
+#icon_dic: filename=category_icon_dic.png, style=icon_category
+#icon_hashtag: filename=category_icon_hashtag.png, style=icon_category
+#icon_travel: filename=category_icon_travel.png, style=icon_category
+#icon_food: filename=category_icon_food.png, style=icon_category
+#icon_stay: filename=category_icon_stay.png, style=icon_category
+#icon_movie: filename=category_icon_movie.png, style=icon_category
+#icon_music: filename=category_icon_music.png, style=icon_category
+#icon_book: filename=category_icon_book.png, style=icon_category
+#icon_game: filename=category_icon_game.png, style=icon_category
+#icon_land: filename=category_icon_land.png, style=icon_category
+#icon_stock: filename=category_icon_stock.png, style=icon_category
+#icon_app: filename=category_icon_app.png, style=icon_category
+
+#label_category: font-family=$SANSSERIF_MEDIUM, font-size=0.8, text-color=$WHITE_COLOR, text-align=center, \
+        width=60dp, height=15dp, position=abs, gravity=bottom
+#label_web: text="통합", style=label_category
+#label_issue: text="이슈", style=label_category
+#label_image: text="이미지", style=label_category
+#label_video: text="비디오", style=label_category
+#label_knowledge: text="지식", style=label_category
+#label_shopping: text="쇼핑", style=label_category
+#label_price: text="가격비교", style=label_category
+#label_map: text="지도", style=label_category
+#label_dic: text="사전", style=label_category
+#label_hashtag: text="해시태그", style=label_category
+#label_travel: text="여행", style=label_category
+#label_food: text="맛집", style=label_category
+#label_stay: text="숙박", style=label_category
+#label_movie: text="영화", style=label_category
+#label_music: text="음악", style=label_category
+#label_book: text="책", style=label_category
+#label_game: text="게임", style=label_category
+#label_land: text="부동산", style=label_category
+#label_stock: text="증권", style=label_category
+#label_app: text="앱", style=label_category
+
+/cell/web: id=web, display=none
+/cell/issue: id=issue, display=none
+/cell/image: id=image, display=none
+/cell/video: id=video, display=none
+/cell/knowledge: id=knowledge, display=none
+/cell/shopping: id=shopping, display=none
+/cell/price: id=price, display=none
+/cell/map: id=map, display=none
+/cell/dic: id=dic, display=none
+/cell/hashtag: id=hashtag, display=none
+/cell/travel: id=travel, display=none
+/cell/food: id=food, display=none
+/cell/stay: id=stay, display=none
+/cell/movie: id=movie, display=none
+/cell/music: id=music, display=none
+/cell/book: id=book, display=none
+/cell/game: id=game, display=none
+/cell/land: id=land, display=none
+/cell/stock: id=stock, display=none
+/cell/app: id=app, display=none

@@ -1,0 +1,163 @@
+import themes.sbss
+
+#img_thumbnail.cover: type=cover, cover="${last-item}", \
+        default-color=$DEFAULT_COVER_COLOR, mask-image=series_cover_mask.png, \
+        scale-mode=fit, content-gravity=bottom
+#label_thumbnail.new: text="•", display=none, \
+        font-family=$SANSSERIF_MEDIUM, text-align=left, text-color=$SUB_COLOR
+#label_thumbnail.title: text="${title}", width=0.96pw, \
+        font-family=$SANSSERIF_LIGHT, text-color=$DEFAULT_TEXT_COLOR, \
+        text-align=center, line-break-mode=tail-truncation
+
+#img_thumbnail.series.icon: filename=mybooksview_icon_books_thumbnail.png
+#label_thumbnail.series.count: text="${ITEM_COUNT}", font-family=$SANSSERIF_MEDIUM, \
+        text-align=right, text-color=$NAVI_COLOR
+
+#img_list.cover: type=cover, cover="${last-item}", \
+        default-color=$DEFAULT_COVER_COLOR, mask-image=item_cover_mask.png, \
+        flow=yes, scale-mode=fit, content-gravity=center
+#label_list.new: text="•", position=abs, display=none, \
+        font-family=$SANSSERIF_MEDIUM, text-align=center, text-color=$SUB_COLOR
+#label_list.title: text="${title}", width=0.7pw, \
+        font-family=$SANSSERIF_LIGHT, text-color=$DEFAULT_TEXT_COLOR, \
+        text-align=left, line-break-mode=tail-truncation
+#label_list.author: text="${author}", width=0.7pw, \
+        font-family=$SANSSERIF_LIGHT, text-color=$SUB_TEXT_COLOR, \
+        text-align=left, line-break-mode=tail-truncation
+
+#img_list.series.icon: filename=mybooksview_icon_books_list.png
+#label_list.series.count: text="${ITEM_COUNT}", font-family=$SANSSERIF_MEDIUM, \
+        text-align=left, text-color=$NAVI_COLOR, vertical-align=middle
+
+#img_list.arrow: filename=subview_btn_arrow.png, width=44dp, height=44dp, position=abs, gravity=right
+
+#label_expiry: type=expiry, product="${product}", \
+        hidden=yes, position=abs, font-family=$SANSSERIF_MEDIUM, \
+        text-align=center, text-color=$WHITE_COLOR, content-background-color=$BLACK_COLOR_DEEP_DIM
+
+#label_size: display=none, position=abs, font-family=$SANSSERIF_MEDIUM, text-color=$NAVY_COLOR
+#blank_mask: display=none, position=abs, color=$BLACK_COLOR_SWALLOWEST_DIM
+#img_selected: display=none, position=abs, filename=mybooksview_icon_selected.png
+#img_deselected: display=none, position=abs, filename=mybooksview_icon_deselected.png
+
+/cell/thumbnail: display=block, position=abs, gravity=bottom
+/cell/thumbnail.series.count: width=1pw, display=block, position=abs, gravity=bottom, text-align=center
+/cell/list: paragraph-spacing=0.2em
+
+if $LAYOUT == "thumbnail"
+    /cell/list: display=none
+    /cell/list.series: display=none
+else
+    /cell/thumbnail: display=none
+    /cell/thumbnail.series.count: display=none
+end
+
+if $SCREEN_WIDTH > 5
+    #img_thumbnail.cover: width=0.9pw, height=186dp
+    #label_thumbnail.new: width=132dp
+    #label_thumbnail.title: height=20dp, margin-top=10dp, font-size=1.1
+    #img_thumbnail.series.icon: width=30dp, height=30dp
+    #label_thumbnail.series.count: height=28dp, font-size=1.2
+
+    #img_list.cover: width=84dp, height=104dp, margin-right=15dp
+    #label_list.new: width=20dp, height=10dp, y=16dp
+    #label_list.title: font-size=1.5
+    #label_list.author: font-size=1.0
+    #img_list.series.icon: width=13dp, height=14dp, vertical-align=middle
+    #label_list.series.count: height=14dp, font-size=1.2
+
+    #label_expiry: font-size=0.9
+
+    /cell/thumbnail.series.count: height=30dp, y=-32dp
+    /cell/list/info: margin-top=35dp
+    /cell/list/info/series.count: margin-top=1em
+
+    if $LAYOUT == "thumbnail"
+        #label_expiry: width=129dp, height=35dp, gravity=bottom, y=-181dp, font-size=0.9
+        #label_size: y=-181dp
+        #img_selected: width=40dp, height=40dp, gravity=bottom, y=-103dp
+        #img_deselected: width=40dp, height=40dp, gravity=bottom, y=-103dp
+    else
+        #label_expiry: width=84dp, height=26dp, gravity=left-bottom, font-size=0.9
+        #blank_mask: width=1pw, height=1ph-4dp
+        #img_selected: width=24dp, height=24dp, gravity=left, x=20dp
+        #img_deselected: width=24dp, height=24dp, gravity=left, x=20dp
+
+        if $ORIENTATION == "portrait"
+            #label_size: x=-40dp
+
+            /cell: margin="15dp 40dp"
+        else
+            #label_size: x=-30dp
+
+            /cell: margin="15dp 20dp"
+        end
+    end
+else
+    #img_thumbnail.cover: width=0.9pw, height=121dp
+    #label_thumbnail.new: width=87dp
+    #label_thumbnail.title: height=15dp, margin-top=5dp, font-size=0.75
+    #img_thumbnail.series.icon: width=20dp, height=20dp
+    #label_thumbnail.series.count: height=20dp, font-size=0.9
+
+    #img_list.cover: width=46dp, height=58dp, margin-right=10dp
+    #label_list.new: width=20dp, height=5dp, x=5dp, y=10dp
+    #label_list.title: font-size=1.2
+    #label_list.author: height=0.75em, font-size=0.75
+    #label_list.series.count: height=9dp, font-size=0.85em
+    #img_list.series.icon: width=9dp, height=9dp, vertical-align=middle
+
+    /cell/thumbnail.series.count: height=20dp, y=-20dp
+    /cell/list/info: margin-top=5dp
+    /cell/list/info/series.count: margin-top=0.4em
+
+    if $LAYOUT == "thumbnail"
+        #label_expiry: width=84dp, height=26dp, gravity=bottom, y=-115dp, font-size=0.7
+        #label_size: y=-115dp
+        #img_selected: width=26dp, height=26dp, gravity=bottom, y=-67dp
+        #img_deselected: width=26dp, height=26dp, gravity=bottom, y=-67dp
+    else
+        #label_expiry: width=56dp, height=18dp, x=15dp, gravity=left-bottom, y=-4dp, font-size=0.6
+        #label_size: x=-10dp
+        #blank_mask: width=1pw, height=1ph-4dp
+        #img_selected: width=22dp, height=22dp, gravity=left, x=10dp
+        #img_deselected: width=22dp, height=22dp, gravity=left, x=10dp
+
+        /cell: margin="10dp 20dp"
+    end
+end
+
+if $EDITING == "yes"
+    #label_expiry: display=none
+    #label_size: display=object
+
+    if $STATE == "selected"
+        #img_selected: display=object
+
+        if $LAYOUT == "list"
+            #blank_mask: display=object
+        end
+    else
+        #img_deselected: display=object
+    end
+
+    if $LAYOUT == "list"
+        #label_list.title: width=0.6pw
+        #label_list.author: width=0.6pw
+
+        if $SCREEN_WIDTH > 5
+            #label_list.new: x=49dp
+
+            /cell: margin-left=64dp
+        else
+            #label_list.new: x=27dp
+
+            /cell: margin-left=42dp
+        end
+    end
+end
+
+if $IS_UNREAD == "yes"
+    #label_thumbnail.new: display=object
+    #label_list.new: display=object
+end

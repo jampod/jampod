@@ -1,0 +1,6 @@
+=begin toolbar
+
+=object button: style=btn_clear
+=object button: style=btn_cancel
+
+=end toolbar

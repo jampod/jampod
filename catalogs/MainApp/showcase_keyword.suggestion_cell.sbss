@@ -1,0 +1,7 @@
+import themes.sbss
+
+#blank_line: color=$LIGHT_LINE_COLOR, width=1pw, height=1dp, \
+        position=abs, gravity=bottom
+
+/cell/keyword: display=block, position=abs, gravity=left, x=10dp, \
+        font-family=$SANSSERIF_MEDIUM, font-size=0.9

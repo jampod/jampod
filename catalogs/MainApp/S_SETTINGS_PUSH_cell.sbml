@@ -1,0 +1,10 @@
+=begin cell
+
+=object label: text="푸시 알림", style=label_title
+
+=object checkbox: id=RemoteNotificationEnabled, value=yes, \
+        action-when-selected=toast, params-when-selected="message=\"푸시 알림을 받습니다.\"", \
+        action-when-deselected=toast, params-when-deselected="message=\"푸시 알림을 받지 않습니다.\"", \
+        style=check_push
+
+=end cell

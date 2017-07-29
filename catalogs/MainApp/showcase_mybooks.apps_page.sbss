@@ -1,0 +1,49 @@
+import themes.sbss
+
+#showcase_items: id=showcase.items, type=items, app="${app}", alternate-name=mybooks.items, \
+        width=1pw, height=1ph, position=abs, gravity=top, \
+        saves-state=yes, state-key=showcase.mybooks.apps.items, \
+        sortable=yes, sortkey=date, sortorder=descending, \
+        selectable=yes, action-when-selected=open, params-when-selected="target=owner,ignore-adding-items=yes", \
+        action-when-selected@series=page, params-when-selected@series="target=popup", \
+        has-toolbar=yes, toolbar-height=44dp, auto-hides-toolbar=yes, \
+        hides-expired-items=yes, hides-preview-items=yes, \
+        reloads-when-appear=yes, has-own-title=yes, has-own-navibar=yes
+
+/page: page-background-color=$PAGE_BG_COLOR
+
+if $LAYOUT == "list"
+    #showcase_items: cell-background-1=$PAGE_BG_DARK_COLOR, cell-background-2=$PAGE_BG_COLOR
+end
+
+if $SCREEN_WIDTH > 5
+    if $ORIENTATION == "portrait"
+        if $LAYOUT == "thumbnail"
+            #showcase_items: column-count=4, cell-size="0, 260dp", content-margin="0 0.03pw", footer-spacing=30dp
+        else
+            #showcase_items: column-count=1, cell-size="1pw, 134dp", selected-color=$THEME_HIGHLIGHT_COLOR
+        end
+    else
+        if $LAYOUT == "thumbnail"
+            #showcase_items: column-count=5, cell-size="0, 260dp", content-margin="0 0.04pw"
+        else
+            #showcase_items: column-count=2, cell-size="0.5pw, 133dp", \
+                    cell-background-1=$PAGE_BG_DARK_COLOR, cell-background-2=$PAGE_BG_COLOR, \
+                    cell-background-3=$PAGE_BG_COLOR, cell-background-4=$PAGE_BG_DARK_COLOR
+        end
+    end
+else
+    if $SCREEN_SIZE > 5
+        if $LAYOUT == "thumbnail"
+            #showcase_items: column-count=4, cell-size="0, 180dp", content-margin="0 0.015pw", footer-spacing=20dp
+        else
+            #showcase_items: column-count=1, cell-size="1pw, 78dp"
+        end
+    else
+        if $LAYOUT == "thumbnail"
+            #showcase_items: column-count=3, cell-size="0, 180dp", content-margin="0 0.0275pw", footer-spacing=20dp
+        else
+            #showcase_items: column-count=1, cell-size="1pw, 78dp"
+        end
+    end
+end

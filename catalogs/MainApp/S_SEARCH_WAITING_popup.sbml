@@ -1,0 +1,9 @@
+=begin popup
+
+=object label: style=label_keyword
+=object label: text="불러오는 중입니다.", style=label_waiting
+
+=object progress: style=progress
+=object timer: style=progress_timer
+
+=end popup

@@ -1,0 +1,13 @@
+=begin popup
+
+=object section: style=section_navibar
+=object showcase: style=showcase_recent
+
+=begin navibar
+
+=object label: style=label_title
+=object button: style=btn_close
+
+=end navibar
+
+=end popup

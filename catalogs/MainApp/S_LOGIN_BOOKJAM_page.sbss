@@ -1,0 +1,61 @@
+import themes.sbss
+
+#btn_back: width=44dp, height=44dp, position=abs, y=20dp, image=cloudview_btn_back.png
+#img_logo: filename=cloudview_image_bookjam.png, width=300dp, height=33dp, \
+        position=abs, gravity=top, y=20dp+6dp
+
+#text_email: height=50dp, padding="0 0 0 0.05pw", \
+        font-family=$SANSSERIF_LIGHT, text-color=$BOOKJAM_COLOR_3, \
+        background-color=$BOOKJAM_COLOR_1_DIM
+#text_password: height=50dp, padding="0 0 0 0.05pw", \
+        font-family=$SANSSERIF_LIGHT, text-color=$BOOKJAM_COLOR_3, \
+        background-color=$BOOKJAM_COLOR_2_DIM
+
+#btn_login: height=50dp, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$WHITE_COLOR, highlight-label-color=$WHITE_COLOR, \
+        background-color=$BOOKJAM_COLOR_3, highlight-background-color=$BOOKJAM_COLOR_1
+#btn_clear: width=50dp, height=50dp, image=cloudview_btn_blank_cancel.png, align=right
+#btn_forget: height=50dp, label-font-family=$SANSSERIF_LIGHT, label-color=$WHITE_COLOR
+
+%clear: display=block, height=50dp, margin-top=-50dp
+
+/page: font-family=$SANSSERIF_LIGHT, text-color=$WHITE_COLOR, page-background-color=$BOOKJAM_COLOR_2
+/page/note: text-align=center, line-spacing=0.6em, paragraph-spacing=0.6em, margin="0 0.07pw"
+/page/login: display=block, position=abs, gravity=top
+/page/login/input/forget: display=block, height=50dp, margin-top=-50dp
+
+if $SCREEN_WIDTH > 5
+    #text_email: width=360dp, label-font-size=1.1, padding="0 20dp"
+    #text_password: width=360dp, label-font-size=1.1, padding="0 20dp"
+    #btn_login: width=400dp, label-font-size=1.1
+    #btn_forget: width=400dp, label-font-size=0.9
+    %clear: width=400dp
+
+    /page: font-size=1.1
+    /page/login/input/forget: width=400dp
+
+    if $ORIENTATION == "portrait"
+        /page: margin-top=420dp
+        /page/login: y=170dp
+    else
+        /page: margin-top=400dp
+        /page/login: y=150dp
+    end
+else
+    #text_email: width=0.9pw, padding="0 0.05pw"
+    #text_password: width=0.9pw, padding="0 0.05pw"
+    #btn_login: width=1pw
+    #btn_forget: width=1pw, label-font-size=0.8
+    %clear: width=1pw
+
+    /page/login/input/forget: width=1pw
+
+    if $SCREEN_SIZE > 4
+        /page: font-size=1, margin-top=360dp
+        /page/login: y=80dp
+    else
+        /page: font-size=0.9, margin-top=100dp
+        /page/login: y=80dp
+    end
+end

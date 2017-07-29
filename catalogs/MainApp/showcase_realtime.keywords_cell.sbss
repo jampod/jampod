@@ -1,0 +1,41 @@
+import themes.sbss
+
+#label_ranking: width=40dp, height=30dp, position=abs, gravity=left, x=15dp, \
+        font-family=$SANSSERIF_BOLD, font-size=1.0, \
+        text-color=$WHITE_COLOR, text-align=center
+
+#label_keyword: width="1pw-(15dp+30dp+10dp+10dp+40dp+20dp)", height=30dp, \
+        position=abs, gravity=left, x=15dp+30dp+10dp, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.1, \
+        text-color=$WHITE_COLOR, text-align=left, \
+        line-break-mode=tail-truncation
+
+#section_fluctuation: section=fluctuation, width=40dp, height=30dp, \
+        position=abs, gravity=right, x=-20dp
+
+#img_fluctuation: filename="ranking_icon_${fluctuation}.png", \
+        width=7dp, height=1ph, scale-mode=fit
+#label_fluctuation: height=1ph, content-padding-left=5dp, \
+        font-family=$SANSSERIF_MEDIUM, font-size=0.8, text-color=$WHITE_COLOR
+
+#input_keyword: id=keyword, value="${keyword}"
+
+#blank_line: width=1pw-20dp, height=1dp, color=$DEFAULT_COLOR, \
+        position=abs, gravity=bottom
+
+/cell: form=search.${keyword}
+/cell/fluctuation: id=fluctuation, display=none, text-align=right
+
+if "${fluctuation}" == "unchanged"
+    #img_fluctuation: filename="", display=none
+    #label_fluctuation: text="-"
+end
+
+if "${fluctuation}" == "new"
+    #img_fluctuation: filename="", display=none
+    #label_fluctuation: text="NEW"
+end
+
+if $STATE == "focused"
+    #label_keyword: text-color=$MAIN_COLOR
+end

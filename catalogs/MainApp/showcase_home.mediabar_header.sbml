@@ -1,0 +1,6 @@
+=begin header
+
+=object label: style=label_title
+=object button: style=btn_minimize
+
+=end header

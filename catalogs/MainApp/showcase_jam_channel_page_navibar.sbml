@@ -1,0 +1,5 @@
+=begin navibar
+
+=object checkbox: style=checkbox_edit
+
+=end navibar

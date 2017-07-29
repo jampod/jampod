@@ -1,0 +1,40 @@
+import themes.sbss
+
+#btn_sort: action=sort, target=owner, height=20dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.0, \
+        label-color=$LIGHT_TEXT_COLOR, selected-label-color=$DEFAULT_TEXT_COLOR
+
+#btn_sort.recent: label="최근순", sortkey=date, sortorder=descending, style=btn_sort
+#btn_sort.name: label="이름순", sortkey=name, sortorder=ascending, style=btn_sort
+
+#label_seperator: height=20dp, font-family=$SANSSERIF_MEDIUM, font-size=0.9, \
+        text-color=$DEFAULT_TEXT_COLOR, text-align=center
+
+#btn_remove: label="파일 삭제", action=remove, target=owner, \
+        width=80dp, height=44dp, position=abs, gravity=left, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$NAVY_COLOR, highlight-label-color=$NAVY_COLOR
+
+#checkbox_all: id=select_all, label="모두 선택", width=80dp, height=44dp, position=abs, gravity=right, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$NAVY_COLOR, selected-label-color=$NAVY_COLOR, highlight-label-color=$NAVY_COLOR, \
+        action-when-selected=select-all, params-when-selected="target=owner", \
+        action-when-deselected=deselect-all, params-when-deselected="target=owner"
+
+/toolbar: page-background-color=$TOOLBAR_BG_COLOR
+/toolbar/sort: pack=yes, display=block, height=34dp, position=abs, gravity=bottom
+/toolbar/edit/actions: display=block
+
+if $SORT_KEY == "name"
+    #btn_sort.name: selected=yes
+end
+
+if $SORT_KEY == "date"
+    #btn_sort.recent: selected=yes
+end
+
+if $EDITING == "yes"
+    /toolbar/sort: display=none
+else
+    /toolbar/edit: display=none
+end

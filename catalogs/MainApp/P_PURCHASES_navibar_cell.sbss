@@ -1,0 +1,21 @@
+import themes.sbss
+
+#blank_line: color=$LIGHT_COLOR_DIM, width=1pw, height=1dp, \
+        position=abs, gravity=top
+
+#label_title: position=abs, gravity=center, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.1
+
+/cell: page-background-color=$TRANSPARENT_COLOR
+
+if "${PANE}" == "1"
+    #label_title: text="캐시 충전"
+else
+    #label_title: text="상품 구매"
+end
+
+if $STATE == "selected"
+    #label_title: text-color=$SUB_COLOR
+else
+    #label_title: text-color=$DEFAULT_TEXT_COLOR
+end

@@ -1,0 +1,8 @@
+import themes.sbss
+
+#btn_more: label="더 많은 도서를 찾고 계신가요?", action=page, display-unit=S_STORE_BOOKS, \
+        height=26dp, content-padding="0dp 18dp", margin-top=20dp, margin-bottom=20dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=0.9, label-color=$DEFAULT_COLOR, \
+        content-border-radius=13dp, content-border-color=$LIGHT_COLOR, content-border-width=1dp
+
+/footer: page-background-color=$SUBVIEW_BG_COLOR

@@ -1,0 +1,42 @@
+import themes.sbss
+
+#section_navibar: section=navibar, width=1pw, height=64dp, position=abs, gravity=top
+
+#showcase_jam: id=showcase.channel.jam, type=packages, channel="${channel}", alternate-name=channel.jam, \
+        width=1pw, height=1ph-64dp, position=abs, gravity=top, y=64dp, \
+        column-count=1, cell-size="220dp, 220dp*(2/3)+40dp", \
+        content-margin="0dp (1pw-220dp)/2", cell-spacing=5dp, header-spacing=20dp, \
+        selectable=yes, action-when-selected=app, \
+        sortable=yes, sortkey=running, sortorder=descending, \
+        keeps-offscreen-cells=yes, reloads-when-appear=yes
+
+#label_title: text="${title}", max-width="1pw-44dp*2", height=44dp, \
+        position=abs, gravity=top, y=20dp, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.4, text-color=$WHITE_COLOR, \
+
+#btn_close: image=subview_btn_close.png, action=popup-close, \
+        width=44dp, height=44dp, position=abs, gravity=left-top, y=20dp
+
+#btn_more: image=subview_btn_channel.png, action=page, display-unit="${id}", \
+        alternate-name=store.channel, target=popup, \
+        has-own-title=yes, navibar-title="채널", \
+        width=44dp, height=44dp, position=abs, gravity=right-top, y=20dp
+
+/popup: page-background-color=$BLACK_COLOR_DEEP_DIM, action-when-touched=popup-close
+/popup/navibar: id=navibar, display=none
+
+if $SCREEN_SIZE > 7
+    if $SCREEN_WIDTH > 5
+        if $ORIENTATION == "landscape"
+            #showcase_jam: column-count=3, cell-spacing=10dp, content-margin="0dp (1pw-220dp*3-10dp*(3-1))/2"
+        else
+            #showcase_jam: column-count=2, cell-spacing=10dp, content-margin="0dp (1pw-220dp*2-10dp*(2-1))/2"
+        end
+    end
+end
+
+if $SCREEN_SIZE > 7
+    #label_title: font-size=1.4
+else
+    #label_title: font-size=1.3
+end

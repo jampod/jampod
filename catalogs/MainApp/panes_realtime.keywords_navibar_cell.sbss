@@ -1,0 +1,18 @@
+import themes.sbss
+
+#img_favicon: width=16dp, height=30dp, scale-mode=fit
+#label_vendor: height=30dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.1, \
+        text-color=$WHITE_COLOR, text-align=center
+
+#blank_selection: width=100dp, height=2dp, color=$MAIN_COLOR, \
+        position=abs, gravity=bottom
+
+#blank_line: width=1pw, height=1dp, color=$DEFAULT_COLOR, \
+        position=abs, gravity=bottom
+
+/cell/content: display=block, text-align=center, position=abs, gravity=center
+
+if $STATE != "selected"
+    #blank_selection: display=none
+end

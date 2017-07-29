@@ -1,0 +1,128 @@
+import themes.sbss
+
+#img_logo: filename=jampod_logo.png, width=150dp, height=50dp
+
+#btn_login.bookjam: action=page, display-unit=S_LOGIN_BOOKJAM, \
+        width=240dp, height=40dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.1, \
+        label-align=center, label-color=$WHITE_COLOR, highlight-label-color=$WHITE_COLOR, \
+        content-background-color=$MAIN_COLOR, highlight-background-color=$SUB_COLOR
+#btn_register: action=page, display-unit=S_REGISTER_BOOKJAM, \
+        width=200dp, height=30dp, margin-top=5dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=0.9, label-align=center, \
+        label-color=$DEFAULT_TEXT_COLOR, highlight-label-color=$BLACK_COLOR
+
+#section_note.line: section=note.line, width=(240dp-(50dp))/2, height=20dp
+#blank_note.line: width=1pw, height=1dp, color=$DEFAULT_TEXT_COLOR, position=abs, gravity=center
+#label_note: width=50dp, height=20dp, font-family=$SANSSERIF_MEDIUM, font-size=0.9, \
+        text-color=$DEFAULT_TEXT_COLOR, text-align=center
+
+#img_login.social: width=24dp, height=36dp, scale-mode=fit
+#img_login.facebook: filename=facebook_logo.png, style=img_login.social
+#img_login.naver: filename=naver_logo.png, style=img_login.social
+#img_login.google: filename=google_logo.png, style=img_login.social
+#img_login.kakao: filename=kakao_logo.png, style=img_login.social
+
+#btn_login.social: action=page, width=140dp, height=36dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.0, label-align=left
+#btn_login.facebook: label="페이스북으로 로그인하기", display-unit=S_LOGIN_FACEBOOK, \
+        style=btn_login.social, label-color=#3D5B9C
+#btn_login.naver: label="네이버로 로그인하기", display-unit=S_LOGIN_NAVER, \
+        style=btn_login.social, label-color=#3DB41F
+#btn_login.google: label="구글로 로그인하기", display-unit=S_LOGIN_GOOGLE, \
+        style=btn_login.social, label-color=#C65154
+#btn_login.kakao: label="카카오로 로그인하기", display-unit=S_LOGIN_KAKAO, \
+        style=btn_login.social, label-color=#3A2224
+
+#img_logon: width=20dp, height=30dp, scale-mode=fit
+#label_logon: text="로그인되어 있습니다", height=30dp, font-size=0.95, text-color=$DEFAULT_TEXT_COLOR
+#label_user.id: text="${USER.ID}", height=30dp, font-size=0.7, text-color=$LIGHT_TEXT_COLOR
+
+#label_user.info: width=0.774cw, height=40dp, \
+        margin-top=5dp, padding="3dp 0.06cw 1dp 0.03cw", \
+        font-family=$SANSSERIF_MEDIUM, font-size=0.95, \
+        text-color=$DEFAULT_TEXT_COLOR, background-color=$WHITE_COLOR, \
+        border-color=$LIGHT_LINE_COLOR, border-width=1dp
+#label_user.name: text="${USER.NAME}", style=label_user.info
+#label_user.email: text="저장된 이메일이 없습니다", style=label_user.info
+
+#btn_logon.action: width=60dp, height=40dp, display=block, \
+        margin="-44dp -1dp 17dp 0", padding="3dp 0 1dp 0", \
+        label-font-size=0.95, \
+        label-color=$DEFAULT_TEXT_COLOR, highlight-label-color=$LIGHT_TEXT_COLOR, \
+        label-align=center, align=right, \
+        border-color=$LIGHT_LINE_COLOR, border-width="0 0 0 1dp"
+#btn_edit.user.name: action=popup, display-unit=S_EDIT_PROFILE, style=btn_logon.action
+#btn_activate.user.email: action=popup, display-unit=S_ACTIVATE_EMAIL, style=btn_logon.action
+
+#btn_edit.user.password: action=popup, display-unit=S_RESET_PASSWORD, \
+        height=1.2em, vertical-align=bottom, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=0.9, \
+        label-color=$SUB_TEXT_COLOR, \
+        border-bottom-width=1dp, border-color=$SUB_TEXT_COLOR
+
+#btn_logout: action=logout, prompt-message="로그아웃하면 앱 내의 모든 데이터가 초기화되며 현재 기기가 내 계정에서 등록 해제됩니다.", \
+        width=0.864cw, height=44dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.1, \
+        label-align=center, label-color=$WHITE_COLOR, highlight-label-color=$WHITE_COLOR, \
+        content-background-color=$MAIN_COLOR, highlight-background-color=$SUB_COLOR
+
+#img_line: width=1pw, height=1dp, margin="30dp 0", background-color=$LIGHT_LINE_COLOR
+
+/catalog: page-background-color=$WHITE_COLOR, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.0, \
+        text-color=$DEFAULT_TEXT_COLOR, text-align=center
+
+/catalog/login/logo: display=block, position=abs, gravity=top, y=60dp
+/catalog/login/logo/note: margin-top=10dp, font-size=0.9
+/catalog/login/actions: display=block, position=abs, gravity=bottom, y=-30dp
+/catalog/login/actions/note: margin-top=30dp, margin-bottom=30dp, font-size=0.9
+/catalog/login/actions/note/line: id=note.line, display=none
+/catalog/login/actions/social: text-align=center, paragraph-spacing=0em
+
+/catalog/profile/head: margin="35dp 0 0 0", text-align=left
+/catalog/profile/head/logon: display=block, width=0.8648cw
+/catalog/profile/head/logon/box: display=block, width=0.8648cw, height=44dp, \
+        margin="11dp 0 17dp 0", padding="7dp 0.027cw", \
+        border-width=1dp, border-color=$LIGHT_LINE_COLOR
+/catalog/profile/head/user: display=block, width=0.8648cw
+/catalog/profile/head/password: text-align=center, margin-top=13dp, display=none
+/catalog/profile/logout: margin-top=52dp
+/catalog/profile/logout/info: margin="1.5em 25dp", \
+        font-family=$SANSSERIF_MEDIUM, font-size=0.8, \
+        text-color=$DEFAULT_TEXT_COLOR, \
+        line-spacing=0.2em, line-break-mode=word-wrap
+
+if $LOGGED_IN == "yes"
+    /catalog/login: display=none
+
+    if "${USER.CHANNEL}" == "facebook"
+        #img_logon: filename=logon_icon_facebook.png
+    elif "${USER.CHANNEL}" == "naver"
+        #img_logon: filename=logon_icon_naver.png
+    elif "${USER.CHANNEL}" == "google"
+        #img_logon: filename=logon_icon_google.png
+    elif "${USER.CHANNEL}" == "kakao"
+        #img_logon: filename=logon_icon_kakao.png
+    else
+        #img_logon: filename=logon_icon_email.png
+
+        /catalog/profile/head/password: display=section
+    end
+
+    if $EMAIL_STATUS == "verified"
+        #label_user.email: text="${USER.EMAIL}"
+        #btn_activate.user.email: label="인증됨", enabled=no
+    end
+else
+    /catalog/profile: display=none
+end
+
+if $PAGE_HEIGHT <= 480
+    #img_logo: display=none
+end
+
+if $SCREEN_WIDTH > 5
+    #btn_login.bookjam: width=320dp
+end
+

@@ -1,0 +1,102 @@
+import themes.sbss
+
+#section_sidebar: section=sidebar, width=280dp, height=1ph, \
+        position=abs, gravity=top-left, \
+        content-background-color=$WHITE_COLOR, \
+        action-when-touched=noop
+
+#blank_spacing: color=$LIGHT_LINE_COLOR, width=1pw, height=8dp
+#blank_line: color=$LIGHT_LINE_COLOR, width=1pw, height=1dp
+
+#section_profile: section=profile.off, width=1pw, height=83dp, \
+        content-background-color=$MAIN_COLOR, \
+        action-when-touched=subview, params-when-touched="subview=V_CLOUD,target=popup"
+
+#img_login.icon: filename=sidebar_profile.png, width=46dp, height=46dp, \
+        position=abs, gravity=left, x=20dp, y=20dp/2
+#label_login.info: text="로그인 하세요.", width=1pw-(20dp+46dp+10dp), \
+        position=abs, gravity=left, x=20dp+46dp+10dp, y=20dp/2, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.0, \
+        text-align=left, text-color=$WHITE_COLOR
+
+#img_profile: type=profile, filename=sidebar_profile.png, width=44dp, height=44dp, \
+        position=abs, gravity=left, x=20dp+1dp, y=(20dp+1dp)/2, \
+        content-border-radius=22dp
+#img_profile.mask: filename=sidebar_profile_mask.png, width=46dp, height=46dp, \
+        position=abs, gravity=left, x=20dp, y=20dp/2
+#label_user.name: text="${USER.NAME}", width=1pw-(20dp+46dp+10dp), \
+        position=abs, gravity=left, x=20dp+46dp+10dp, y=20dp/2, \
+        font-family=$SANSSERIF_MEDIUM, font-size=1.2, \
+        text-align=left, text-color=$WHITE_COLOR, \
+        line-break-mode=tail-truncation
+
+#section_menu.main: section=menu.main, width=1pw, height=1ph-(83dp+108dp), min-height=50dp*4
+#section_menu.main.home: section=menu.main.home, width=1pw, height=50dp, \
+        action-when-touched=subview, params-when-touched="subview=V_HOME"
+#section_menu.main.jam: section=menu.main.jam, width=1pw, height=50dp, \
+        action-when-touched=subview, params-when-touched="subview=V_JAM"
+#section_menu.main.mybooks: section=menu.main.mybooks, width=1pw, height=50dp, \
+        action-when-touched=subview, params-when-touched="subview=V_MYBOOKS"
+#section_menu.main.cash: section=menu.main.cash, width=1pw, height=50dp, \
+        action-when-touched=subview, params-when-touched="subview=V_CASH"
+
+#img_menu.main: width=30dp, height=30dp, position=abs, gravity=left, x=20dp
+#img_menu.main.home: filename=sidebar_btn_home.png, style=img_menu.main
+#img_menu.main.jam: filename=sidebar_btn_jam.png, style=img_menu.main
+#img_menu.main.mybooks: filename=sidebar_btn_mybooks.png, style=img_menu.main
+#img_menu.main.cash: filename=sidebar_btn_cash.png, style=img_menu.main
+
+#lable_menu.main: position=abs, gravity=left, x=60dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=1.1, \
+        text-color=$DARK_TEXT_COLOR, text-align=left
+#label_menu.main.home: text="홈", style=lable_menu.main
+#label_menu.main.jam: text="나의 잼", style=lable_menu.main
+#label_menu.main.mybooks: text="도서 보관함", style=lable_menu.main
+#label_menu.main.cash: text="북잼 캐시", style=lable_menu.main
+
+#section_menu.sub: section=menu.sub, width=1pw, height=100dp
+#section_menu.sub.settings: section=menu.sub.settings, width=80dp, height=60dp, \
+        position=abs, gravity=center, x=-(40dp+20dp), y=6dp, \
+        action-when-touched=subview, params-when-touched="subview=V_SETTINGS,target=popup"
+#section_menu.sub.support: section=menu.sub.support, width=80dp, height=60dp, \
+        position=abs, gravity=center, y=6dp, \
+        action-when-touched=subview, params-when-touched="subview=V_SUPPORT,target=popup"
+#section_menu.sub.notice: section=menu.sub.notice, width=80dp, height=60dp, \
+        position=abs, gravity=center, x=(40dp+20dp), y=6dp, \
+        action-when-touched=subview, params-when-touched="subview=V_NOTICE,target=popup"
+
+#label_menu.sub: width=80dp, height=20dp, position=abs, gravity=top, y=40dp, \
+        font-family=$SANSSERIF_LIGHT, font-size=0.8, text-align=center, text-color=$DARK_TEXT_COLOR
+#label_menu.sub.settings: text="설정", style=label_menu.sub
+#label_menu.sub.support: text="문의하기", style=label_menu.sub
+#label_menu.sub.notice: text="공지사항", style=label_menu.sub
+
+#img_menu.sub: width=40dp, height=40dp, position=abs, gravity=top, scale-mode=fit
+#img_menu.sub.settings: filename=sidebar_btn_settings.png, style=img_menu.sub
+#img_menu.sub.support: filename=sidebar_btn_support.png, style=img_menu.sub
+#img_menu.sub.notice: filename=sidebar_btn_notice.png, style=img_menu.sub
+#img_menu.sub.notice.new: type=notice, catalog=Notice, filename=subview_icon_new.png, \
+        width=13dp, height=13dp, position=abs, gravity=top, x=13dp, y=5dp
+
+/catalog: action-when-touched=sidebar-close
+/catalog/sidebar: id=sidebar, display=none
+/catalog/profile.on: id=profile.on, display=none
+/catalog/profile.off: id=profile.off, display=none
+/catalog/menu.main: id=menu.main, display=none
+/catalog/menu.main/home: id=menu.main.home, display=none
+/catalog/menu.main/jam: id=menu.main.jam, display=none
+/catalog/menu.main/mybooks: id=menu.main.mybooks, display=none
+/catalog/menu.main/cash: id=menu.main.cash, display=none
+/catalog/menu.sub: id=menu.sub, display=none
+/catalog/menu.sub/settings: id=menu.sub.settings, display=none
+/catalog/menu.sub/support: id=menu.sub.support, display=none
+/catalog/menu.sub/notice: id=menu.sub.notice, display=none
+
+if $LOGGED_IN == "yes"
+    #section_profile: section=profile.on
+end
+
+if $PAGE_HEIGHT > 570
+    #section_menu.sub: position=abs, gravity=bottom
+end
+

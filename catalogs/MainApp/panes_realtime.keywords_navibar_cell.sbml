@@ -1,0 +1,10 @@
+=begin cell
+
+=begin content
+=(object image: filename="favicon/${favicon}.png", style=img_favicon)= =(object label: text="${name}", style=label_vendor)=
+=end content
+
+=object blank: style=blank_line
+=object blank: style=blank_selection
+
+=end cell

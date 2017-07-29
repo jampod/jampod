@@ -1,0 +1,9 @@
+=begin cell
+
+=begin title
+${title}
+=end title
+
+=object image: style=img_ad
+
+=end cell

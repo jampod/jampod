@@ -1,0 +1,44 @@
+import themes.sbss
+
+#btn_head: action=subview, subview=V_REALTIME.KEYWORDS, target=popup, width=58dp, height=1ph, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=0.92, \
+        label-color=$MAIN_COLOR, label-align=right, content-padding-right=8dp
+#img_source: width=14dp, height=1ph, scale-mode=fit
+#label_ranking: width=24dp, height=1ph, \
+        font-family=$SANSSERIF_MEDIUM, font-size=0.92, text-color=$DEFAULT_COLOR, \
+        text-align=center
+#label_keyword: width="1pw-(58dp+14dp+24dp+30dp+46dp)", height=1ph, \
+        font-family=$SANSSERIF_MEDIUM, font-size=0.92, text-color=$DEFAULT_COLOR, \
+        line-break-mode=tail-truncation
+#section_fluctuation: section=fluctuation, width=30dp, height=1ph
+
+#btn_open: action=subview, subview=V_REALTIME.KEYWORDS, target=popup, \
+        image=keywords_btn_open.png, width=30dp, height=1ph, scale-mode=fit, \
+        margin="0 10dp 0 6dp"
+
+#img_fluctuation: filename="ranking_icon_${fluctuation}_gray.png", \
+        width=7dp, height=1ph, scale-mode=fit
+#label_fluctuation: height=1ph, content-padding-left=3dp, \
+        font-family=$SANSSERIF_MEDIUM, font-size=0.7, text-color=$DEFAULT_COLOR
+
+#btn_search: action=script, script=search_keyword, form=search, \
+        label="${keyword}", content-padding-left=30dp, max-width=1pw, height=1ph, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=0.8, \
+        label-color=$TRANSPARENT_COLOR, highlight-label-color=$TRANSPARENT_COLOR, \
+        position=abs, gravity=left, x="50dp+20dp+14dp"
+
+#input_keyword: id=keyword, value="${keyword}"
+
+/cell: form=search, page-background-color=$WHITE_COLOR
+/cell/content: text-align=left, vertical-align=middle, display=block, position=abs, gravity=center
+/cell/fluctuation: id=fluctuation, display=none, text-align=right
+
+if "${fluctuation}" == "unchanged"
+    #img_fluctuation: filename="", display=none
+    #label_fluctuation: text="-"
+end
+
+if "${fluctuation}" == "new"
+    #img_fluctuation: filename="", display=none
+    #label_fluctuation: text="NEW"
+end

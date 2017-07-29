@@ -1,0 +1,7 @@
+=begin empty
+
+=begin message
+독서를 하시면 =(object label: text="최근 읽은 책", style=label_heading)= 이 표시됩니다.
+=end message
+
+=end empty

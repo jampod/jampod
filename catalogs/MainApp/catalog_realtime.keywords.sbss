@@ -1,0 +1,3 @@
+import themes.sbss
+
+#cell_realtime.keywords: width=1pw, height=1ph, display-unit=S_REALTIME.KEYWORDS

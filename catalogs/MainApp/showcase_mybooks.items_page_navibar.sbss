@@ -1,0 +1,9 @@
+import themes.sbss
+
+#checkbox_edit: label="편집", selected-label="완료", type=edit, owner=showcase.items, \
+        width=44dp, height=44dp, position=abs, gravity=right-top, y=20dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=1.0, \
+        label-align=center, label-color=$WHITE_COLOR, \
+        selected-label-color=$WHITE_COLOR, highlight-label-color=$LIGHT_COLOR, \
+        action-when-selected="edit", params-when-selected="target=object,object=showcase.items", \
+        action-when-deselected="edit-done", params-when-deselected="target=object,object=showcase.items"

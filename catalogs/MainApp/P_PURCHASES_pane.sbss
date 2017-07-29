@@ -1,0 +1,18 @@
+import themes.sbss
+
+#showcase_purchases: type=purchases, source=bookjam, \
+        data-downloadable=yes, extends-data=yes, loads-more=yes, \
+        width=1pw, height=1ph, \
+        column-count=1, cell-size="1pw, 100dp"
+                    
+/pane: page-background-color=$TRANSPARENT_COLOR
+
+if $SCREEN_WIDTH > 5
+    #showcase_purchases: cell-size="0.5pw, 100dp", column-count=2
+end
+
+if "${PANE}" == "1"
+    #showcase_purchases: alternate-name=purchases.cash, filter=items
+else
+    #showcase_purchases: alternate-name=purchases.points, filter=items
+end

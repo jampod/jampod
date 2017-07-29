@@ -1,0 +1,82 @@
+import themes.sbss
+
+#btn_sort.recent: label="신간순", action=sort, sortkey=date, sortorder=descending, target=owner, \
+        height=34dp, label-font-family=$SANSSERIF_LIGHT, active-color=$TRANSPARENT_COLOR
+#btn_sort.title: label="제목순", action=sort, sortkey=title, sortorder=ascending, target=owner, \
+        height=34dp, label-font-family=$SANSSERIF_LIGHT, active-color=$TRANSPARENT_COLOR
+
+#btn_sort.recent_img: action=sort, sortkey=date, sortorder=descending, target=owner, \
+        image=subview_toolbar_point.png, height=44dp, scale-mode=fit, position=abs, gravity=top
+#btn_sort.title_img: action=sort, sortkey=id, sortorder=ascending, target=owner, \
+        image=subview_toolbar_point.png, height=44dp, scale-mode=fit, position=abs, gravity=top
+
+#btn_layout: target=owner, selected=yes, width=44dp, height=44dp, position=abs, gravity=left
+#btn_reading: action=popup, display-unit="${id}", alternate-name=mybooks.items.reading, \
+        width=44dp, height=44dp, position=abs, gravity=right, x=-40dp, \
+        image=mybooksview_icon_recent.png
+
+#btn_discard: label="데이터 제거", action=discard-book, target=owner, \
+        width=80dp, height=44dp, position=abs, gravity=left, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$NAVY_COLOR, highlight-label-color=$NAVY_COLOR
+
+#checkbox_expiry: id=expiry, saves-state=yes, \
+        width=44dp, height=44dp, position=abs, gravity=right, \
+        image=mybooksview_toolbar_btn_time_off.png, \
+        selected-image=mybooksview_toolbar_btn_time_on.png, \
+        highlight-image=mybooksview_toolbar_btn_time_on.png, \
+        action-when-selected="show-expiry", params-when-selected="target=owner", \
+        action-when-deselected="hide-expiry", params-when-deselected="target=owner"
+
+#checkbox_all: id=select_all, label="모두 선택", width=80dp, height=44dp, position=abs, gravity=right, \
+        label-font-family=$SANSSERIF_LIGHT, \
+        label-color=$NAVY_COLOR, selected-label-color=$NAVY_COLOR, highlight-label-color=$NAVY_COLOR, \
+        action-when-selected=select-all, params-when-selected="target=owner", \
+        action-when-deselected=deselect-all, params-when-deselected="target=owner"
+
+/toolbar: page-background-color=$TOOLBAR_BG_COLOR
+/toolbar/sort: pack=yes, display=block, height=34dp, position=abs, gravity=bottom
+
+if $SORT_KEY == "date"
+    #btn_sort.recent: enabled=no, label-color=$NAVY_COLOR, disable-label-color=$NAVY_COLOR
+    #btn_sort.title: label-color=$DEFAULT_COLOR, highlight-label-color=$NAVY_COLOR
+    #btn_sort.title_img: display=none
+else
+    #btn_sort.recent: label-color=$DEFAULT_COLOR, highlight-label-color=$NAVY_COLOR
+    #btn_sort.title: enabled=no, label-color=$NAVY_COLOR, disable-label-color=$NAVY_COLOR
+    #btn_sort.recent_img: display=none
+end
+
+if $SCREEN_WIDTH > 5
+    #btn_sort.recent: width=80dp, label-font-size=1.1
+    #btn_sort.title: width=80dp, label-font-size=1.1
+    #btn_sort.recent_img: width=80dp, x=-40dp
+    #btn_sort.title_img: width=80dp, x=40dp
+else
+    #btn_sort.recent: width=60dp, label-font-size=0.9
+    #btn_sort.title: width=60dp, label-font-size=0.9
+    #btn_sort.recent_img: width=60dp, x=-30dp
+    #btn_sort.title_img: width=60dp, x=30dp
+end
+
+if $LAYOUT == "thumbnail"
+    #btn_layout: action=layout, layout=list, image=subview_btn_layout_list.png
+else
+    #btn_layout: action=layout, layout=thumbnail, image=subview_btn_layout_thumbnail.png
+end
+
+if $EDITING == "yes"
+    #btn_sort.recent_img: display=none
+    #btn_sort.title_img: display=none
+    #btn_layout: display=none
+    #checkbox_expiry: display=none
+    #btn_reading: display=none
+
+    /toolbar/sort: display=none
+    /toolbar/edit/actions: display=block
+else
+    #checkbox_all: display=none
+    #btn_discard: display=none
+
+    /toolbar/edit: display=none
+end

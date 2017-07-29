@@ -1,0 +1,38 @@
+
+import themes.sbss
+
+#panes_search: id=panes.search, alternate-name=search, \
+        width=1pw, height=1ph-20dp, position=abs, gravtity=top, y=20dp, \
+        has-navibar=yes, navibar-position=top, navibar-cell-size="50dp, 50dp", navibar-margin="0 40dp 0 54dp", \
+        has-toolbar=yes, toolbar-height=50dp, animates-toolbar=no, navibar-in-toolbar=yes, \
+        single-mode=yes, content-background-color=#F4FAFC, \
+        script-when-paging=on_search_paging
+
+#section_dim: group=search.categories, section=dim, hidden=yes, \
+        width=1pw, height=1ph-50dp, position=abs, gravity=top, \
+        content-background-color=$BLACK_COLOR_DEEP_DIM
+
+#btn_home: image=subview_btn_home.png, action=popup-close, \
+        width=44dp, height=44dp, position=abs, gravity=left-bottom, y=-(150dp+4dp)
+#btn_close: image=subview_btn_close.png, action=hide, params="group=search.categories", \
+        width=44dp, height=44dp, position=abs, gravity=right-bottom, y=-(150dp+4dp)
+
+#btn_action.bar: width=100dp, height=28dp, \
+        label-font-family=$SANSSERIF_MEDIUM, label-font-size=0.9, \
+        label-color=$WHITE_COLOR, highlight-label-color=$DEFAULT_COLOR, label-align=center, \
+        content-border-radius=14dp, content-border-width=1dp, content-border-color=$WHITE_COLOR_DIM
+#btn_query: label="검색어 변경", style=btn_action.bar, script=query_keyword
+#btn_realtime: label="실시간 검색어", style=btn_action.bar, script=show_realtime_keywords
+
+#cell_categories: group=search.categories, display-unit=S_SEARCH.CATEGORIES, \
+        width=1pw, height=150dp, position=abs, gravity=bottom, y=-50dp, hidden=yes
+
+#cell_realtime.keywords: id=cell.realtime.keywords, display-unit=S_REALTIME.KEYWORDS, \
+        width=1pw, height=1ph, position=abs, gravity=top, hidden=yes
+
+#cell_query: id=cell.query, display-unit=S_QUERY, \
+        width=1pw, height=1ph, position=abs, gravity=top, hidden=yes
+
+/popup: page-background-color=$MAIN_COLOR, script-when-loaded=on_loaded, scrolls-on-keyboard=no
+/popup/dim: id=dim, display=none
+/popup/dim/action.bar: display=block, text-align=center, position=abs, gravity=bottom, y=-(150dp+10dp)

@@ -1,0 +1,6 @@
+=begin cell
+
+=object image: type=cover, cover="${item}", style=img_cover
+=object label: text="${title}", style=label_title
+
+=end cell

@@ -1,0 +1,11 @@
+import themes.sbss
+
+#btn_title: width=1pw, height=1ph, \
+        label-font-family=$SANSSERIF_LIGHT, label-align=left, \
+        label-color=$DEFAULT_TEXT_COLOR, highlight-label-color=$BLACK_COLOR, \
+        content-background-color=$WHITE_COLOR, highlight-background-color=$LIGHT_COLOR, \
+        content-padding-left=20dp
+
+if $SCREEN_WIDTH > 5
+    #btn_title: label-font-size=1.1
+end

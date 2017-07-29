@@ -1,0 +1,13 @@
+=begin footer
+
+=object section: style=section_recommend.heading
+=object showcase: style=showcase_recommend
+
+=begin recommend.heading
+
+=object label: style=label_recommend.heading
+=object blank: style=blank_line
+
+=end recommend.heading
+
+=end footer

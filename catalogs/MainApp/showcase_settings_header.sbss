@@ -1,0 +1,14 @@
+import themes.sbss
+
+#showcase_settings: width=1pw, height=101dp, margin-bottom=0.05pw, \
+        column-count=1, cell-spacing=1dp
+
+%title: font-family=$SANSSERIF_LIGHT, text-color=$THEME_COLOR_109, margin="15dp 0 10dp 20dp"
+
+if $SCREEN_WIDTH > 5
+    #showcase_settings: cell-size="600dp, 50dp", content-margin="0 (1pw-600dp)/2"
+
+    /header: font-size=1.1, margin="0 (1pw-600dp)/2"
+else
+    #showcase_settings: cell-size="1pw, 50dp"
+end

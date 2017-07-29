@@ -1,0 +1,137 @@
+=begin cell
+
+=begin categories.1: style=categories, style=categories.1
+=begin buttons: style=buttons
+=(object section: style=section_web)= =(object section: style=section_issue)= =(object section: style=section_image)= =(object section: style=section_video)= =(object section: style=section_knowledge)=
+=(object section: style=section_shopping)= =(object section: style=section_price)= =(object section: style=section_map)= =(object section: style=section_dic)= =(object section: style=section_hashtag)=
+=end buttons
+=end categories.1
+
+=begin categories.2: style=categories, style=categories.2
+=begin buttons: style=buttons
+=(object section: style=section_travel)= =(object section: style=section_food)= =(object section: style=section_stay)= =(object section: style=section_movie)= =(object section: style=section_music)=
+=(object section: style=section_book)= =(object section: style=section_game)= =(object section: style=section_land)= =(object section: style=section_stock)= =(object section: style=section_app)=
+=end buttons
+=end categories.2
+
+=begin web
+=object button: style=btn_web
+=object image: style=icon_web
+=object label: style=label_web
+=end web
+
+=begin issue
+=object button: style=btn_issue
+=object image: style=icon_issue
+=object label: style=label_issue
+=end issue
+
+=begin image
+=object button: style=btn_image
+=object image: style=icon_image
+=object label: style=label_image
+=end image
+
+=begin video
+=object button: style=btn_video
+=object image: style=icon_video
+=object label: style=label_video
+=end video
+
+=begin knowledge
+=object button: style=btn_knowledge
+=object image: style=icon_knowledge
+=object label: style=label_knowledge
+=end knowledge
+
+=begin shopping
+=object button: style=btn_shopping
+=object image: style=icon_shopping
+=object label: style=label_shopping
+=end shopping
+
+=begin price
+=object button: style=btn_price
+=object image: style=icon_price
+=object label: style=label_price
+=end price
+
+=begin map
+=object button: style=btn_map
+=object image: style=icon_map
+=object label: style=label_map
+=end map
+
+=begin dic
+=object button: style=btn_dic
+=object image: style=icon_dic
+=object label: style=label_dic
+=end dic
+
+=begin hashtag
+=object button: style=btn_hashtag
+=object image: style=icon_hashtag
+=object label: style=label_hashtag
+=end hashtag
+
+=begin travel
+=object button: style=btn_travel
+=object image: style=icon_travel
+=object label: style=label_travel
+=end travel
+
+=begin food
+=object button: style=btn_food
+=object image: style=icon_food
+=object label: style=label_food
+=end food
+
+=begin stay
+=object button: style=btn_stay
+=object image: style=icon_stay
+=object label: style=label_stay
+=end stay
+
+=begin movie
+=object button: style=btn_movie
+=object image: style=icon_movie
+=object label: style=label_movie
+=end movie
+
+=begin music
+=object button: style=btn_music
+=object image: style=icon_music
+=object label: style=label_music
+=end music
+
+=begin book
+=object button: style=btn_book
+=object image: style=icon_book
+=object label: style=label_book
+=end book
+
+=begin game
+=object button: style=btn_game
+=object image: style=icon_game
+=object label: style=label_game
+=end game
+
+=begin land
+=object button: style=btn_land
+=object image: style=icon_land
+=object label: style=label_land
+=end land
+
+=begin stock
+=object button: style=btn_stock
+=object image: style=icon_stock
+=object label: style=label_stock
+=end stock
+
+=begin app
+=object button: style=btn_app
+=object image: style=icon_app
+=object label: style=label_app
+=end app
+
+=end cell

@@ -1,0 +1,19 @@
+=begin empty
+
+=begin loading
+
+=begin message
+앱 목록을 불러오고 있습니다.
+=end message
+
+=end loading
+
+=begin loaded
+
+=begin message
+사용한 앱 목록이 없습니다.
+=end message
+
+=end loaded
+
+=end empty

@@ -1,0 +1,25 @@
+import themes.sbss
+
+#section_navibar: section=navibar, width=1pw, height=64dp, position=abs, gravity=top
+
+#showcase_recent: type=readings, alternate-name=mybooks.recent, \
+        width=1pw, height=1ph-64dp, position=abs, gravity=top, y=64dp, \
+        column-count=1, cell-size="1pw, 120dp", \
+        selectable=yes, action-when-selected=open, params-when-selected="target=owner,ignore-adding-items=yes", \
+        reloads-when-appear=yes
+
+#label_title: text="최근 읽은 책", max-width="1pw-44dp*2", height=44dp, \
+        position=abs, gravity=top, y=20dp, \
+        font-family=$SANSSERIF_LIGHT, text-color=$WHITE_COLOR, \
+
+#btn_close: image=subview_btn_close.png, action=popup-close, width=44dp, height=44dp, \
+        position=abs, gravity=left-top, y=20dp
+
+/popup: page-background-color=$BLACK_COLOR_DEEP_DIM
+/popup/navibar: id=navibar, display=none
+
+if $SCREEN_SIZE > 7
+    #label_title: font-size=1.4
+else
+    #label_title: font-size=1.3
+end

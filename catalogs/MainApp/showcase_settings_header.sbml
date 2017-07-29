@@ -1,0 +1,11 @@
+=begin header
+
+=begin title
+계정
+=end title
+
+=object showcase: name=settings, category=C_PROFILE, \
+                sortable=yes, sortkey=key, sortorder=ascending, \
+                style=showcase_settings
+
+=end header

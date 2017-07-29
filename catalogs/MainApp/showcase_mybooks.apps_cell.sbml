@@ -1,0 +1,9 @@
+=begin cell
+
+=object image: style=img_icon
+=object label: style=label_title
+=object image: style=img_arrow
+
+=object blank: style=blank_line
+
+=end cell

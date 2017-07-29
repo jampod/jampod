@@ -1,0 +1,7 @@
+=begin cell
+
+=object label: style=label_query.history
+
+=object blank: style=blank_line
+
+=end cell

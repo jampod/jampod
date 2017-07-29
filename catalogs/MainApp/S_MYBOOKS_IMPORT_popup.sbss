@@ -1,0 +1,29 @@
+import themes.sbss
+
+#section_navibar: section=navibar, width=1pw, height=64dp, position=abs, gravity=top, \
+        content-background-color=$MAIN_COLOR
+
+#showcase_folder: type=folder, alternate-name=folder, filter=file, pattern=".*\\.bxp", \
+        width=1pw, height=1ph-64dp, position=abs, gravity=top, y=64dp, \
+        column-count=1, cell-size="1pw, 74dp", \
+        sortable=yes, sortkey=date, sortorder=descending, \
+        selectable=yes, action-when-selected=import, \
+        params-when-selected="target=object,object=showcase.items,action-when-done=popup-close", \
+        has-toolbar=yes, toolbar-position=bottom, toolbar-height=44dp, \
+        cell-background-1=$PAGE_BG_DARK_COLOR, cell-background-2=$PAGE_BG_COLOR
+
+#label_title: text="파일 가져 오기", max-width="1pw-44dp*2", height=44dp, \
+        position=abs, gravity=top, y=20dp, \
+        font-family=$SANSSERIF_LIGHT, text-color=$WHITE_COLOR, \
+
+#btn_close: image=subview_btn_close.png, action=popup-close, width=44dp, height=44dp, \
+        position=abs, gravity=left-top, y=20dp
+
+/popup: page-background-color=$WHITE_COLOR, action-when-touched=popup-close
+/popup/navibar: id=navibar, display=none
+
+if $SCREEN_SIZE > 7
+    #label_title: font-size=1.4
+else
+    #label_title: font-size=1.3
+end

@@ -1,0 +1,5 @@
+=begin pane
+
+=object showcase: style=showcase_query.history
+
+=end pane

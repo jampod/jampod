@@ -1,0 +1,57 @@
+import themes.sbss
+
+#showcase_items: id=showcase.items, type=items, app="${app}", alternate-name=mybooks.series, \
+        width=1pw, height=1ph, toolbar-height=44dp, \
+        series-mode=yes, series="${series}", \
+        extends-data=yes, saves-state=yes, \
+        sortable=yes, sortkey=id, sortorder=ascending, \
+        selectable=yes, action-when-selected=open, params-when-selected="target=owner,ignore-adding-items=yes", \
+        has-toolbar=yes, toolbar-display-unit="${id}", auto-hides-toolbar=yes, \
+        reloads-when-appear=yes
+
+/page: page-background-color=$PAGE_BG_COLOR
+
+
+if $LAYOUT == "thumbnail"
+    #showcase_items: footer-spacing=30dp
+end
+
+if $LAYOUT == "list"
+    #showcase_items: cell-background-1=$PAGE_BG_DARK_COLOR, cell-background-2=$PAGE_BG_COLOR
+end
+
+if $SCREEN_WIDTH > 5
+    #showcase_items: header-height=130dp
+
+    if $ORIENTATION == "portrait"
+        if $LAYOUT == "thumbnail"
+            #showcase_items: column-count=4, cell-size="0.235pw, 260dp", content-margin="0 0.03pw"
+        else
+            #showcase_items: column-count=1, cell-size="1pw, 134dp"
+        end
+    else
+        if $LAYOUT == "thumbnail"
+            #showcase_items: column-count=5, cell-size="0.184pw, 260dp", content-margin="0 0.04pw"
+        else
+            #showcase_items: column-count=2, cell-size="0.5pw, 133dp", \
+                    cell-background-1=$PAGE_BG_DARK_COLOR, cell-background-2=$PAGE_BG_COLOR, \
+                    cell-background-3=$PAGE_BG_COLOR, cell-background-4=$PAGE_BG_DARK_COLOR
+        end
+    end
+else
+    #showcase_items: header-height=78dp
+
+    if $SCREEN_SIZE > 5
+        if $LAYOUT == "thumbnail"
+            #showcase_items: column-count=4, cell-size="0.2425pw, 180dp", content-margin="0 0.015pw"
+        else
+            #showcase_items: column-count=1, cell-size="1pw, 78dp"
+        end
+    else
+        if $LAYOUT == "thumbnail"
+            #showcase_items: column-count=3, cell-size="0.315pw, 180dp", content-margin="0 0.0275pw"
+        else
+            #showcase_items: column-count=1, cell-size="1pw, 78dp"
+        end
+    end
+end
